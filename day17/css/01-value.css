@@ -1,0 +1,33 @@
+/*
+comment
+*/
+.one {
+  color: red;
+  font-size: 20px;
+  height: 10px;
+  width: 1190px; }
+
+.two {
+  color: red;
+  border: 1px solid yellow; }
+
+/**************************************************/
+.border-top {
+  border-top: 1px solid yellow; }
+
+/**************************************************/
+.three {
+  font-size: 30px;
+  color: red; }
+
+.four {
+  height: 40px; }
+
+.five {
+  font-size: 50px; }
+
+/**************************************************/
+.six {
+  font-size: 2em; }
+
+/*# sourceMappingURL=01-value.css.map */

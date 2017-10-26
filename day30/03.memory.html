@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数缓存</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    function fun(arg1,arg2){
+      if (fun.result === undefined){
+        fun.result = [];
+      }
+
+      console.log(fun.result);
+    }
+
+    console.log(fun.name);
+    console.log(fun.length);
+
+
+
+   console.log('***************************');
+
+   /*
+   功能：判断是否是质数
+   @num: 大于1的正整数
+   */
+   function isPrime(num){
+     //判断是否是大于1的整数
+      if(!Number.isInteger(num) || num <= 1){
+        return;
+      }
+
+     if (isPrime.result === undefined){
+       isPrime.result = {};
+     }
+
+     if (isPrime.result[num] !== undefined){
+       return isPrime.result[num];
+     }
+
+
+     console.log("-----------------------");
+
+     var ret = true;
+     for (var i = 2; i < num ; i++) {
+       if (num % i === 0){
+         ret = false;
+         break;
+       }
+     }
+
+     return isPrime.result[num] = ret;
+   }
+
+
+   console.log(isPrime(2));
+   console.log(isPrime(3));
+   console.log(isPrime(4));
+   console.log(isPrime(2));
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

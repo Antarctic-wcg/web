@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #box {
+        width: 600px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 50px;
+        text-align: center;
+        margin: 100px auto;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="box"><span>10</span>s之后自动关闭</div>
+
+    <script type="text/javascript">
+    var box = document.getElementById("box");
+    var t = box.firstElementChild;
+
+    var seconds = 10, timer;
+
+    function close(){
+      seconds--;
+      if (seconds <= 0){
+        clearTimeout(timer);
+        box.style.display = "none";
+        return;
+      }
+      t.innerHTML= seconds;
+
+      timer = setTimeout(close, 1000);
+    }
+
+    setTimeout(function() {
+      close();
+    }, 1000);
+
+
+    // setInterval(function(){
+    //   seconds--;
+    //   if (seconds <= 0){
+    //     clearInterval(timer);
+    //     box.style.display = "none";
+    //     return;
+    //   }
+    //   t.innerHTML= seconds;
+    // },1000);
+
+
+
+    </script>
+
+  </body>
+</html>

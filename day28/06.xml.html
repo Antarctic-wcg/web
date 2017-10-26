@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>xml的解析</title>
+</head>
+
+<body>
+
+
+  <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    //xml的解析！！！！
+
+    var xmlStr =
+      `z
+    <rss version='2.0'>
+     <stu>
+       <name id='name'>lisi</name>
+       <age>10</age>
+       <gender>male</gender>
+       <hobby>
+         <one>read</one>
+         <one>sport</one>
+         <one>code</one>
+       </hobby>
+     </stu>
+     </rss>
+     `;
+    console.log(xmlStr);
+
+    //使用jQuery.parseXML();
+    var ret = $.parseXML(xmlStr);
+    console.log(ret);//DOM对象
+
+    //获取其中的值
+    console.log($(ret).find("#name").html());
+    console.log($(ret).find("hobby one").eq(0).html());//eq(x)得到的是jQuery对象
+    console.log($(ret).find("hobby one")[0].innerHTML);//[x]得到是DOM对象！！！！！！
+
+
+
+
+    //原生方法解析XML
+    var str = `
+    <stu>
+      <name>lisi</name>
+      <age>10</age>
+      <gender>male</gender>
+      <hobby>
+        <one>read</one>
+        <one>sport</one>
+        <one>code</one>
+      </hobby>
+    </stu>
+    `;
+
+    var parser = new DOMParser();//实验中的功能
+    var ret = parser.parseFromString(str,"application/xml");
+    //原生方法解析!!!!!
+    console.log(ret.getElementsByTagName("name")[0].innerHTML);
+
+
+
+
+
+   /*
+   json VS xml???
+   */
+
+
+
+  </script>
+
+</body>
+
+</html>

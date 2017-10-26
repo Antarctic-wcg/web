@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>函数节流</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      border: 1px solid gray;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    tr {
+      height: 50px;
+    }
+
+    td,
+    th {
+      width: 120px;
+    }
+
+    tr,
+    td,
+    th {
+      border: 1px solid gray;
+    }
+
+    #btn {
+      position: fixed;
+      top: 0;
+      right: 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button id="btn">点击我</button>
+
+  <table>
+    <thead>
+      <tr>
+        <td>name</td>
+        <td>age</td>
+        <td>gender</td>
+      </tr>
+    </thead>
+
+    <tbody></tbody>
+  </table>
+
+  <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $("#btn").click(function() {
+      alert("btn ....");
+    });
+
+
+    var num = 0;
+    /*
+    节流概念：防止代码连续不间断的运行
+    */
+
+    //定时器节流
+    function createTable() {
+
+      for (var i = 0; i < 100; i++) {
+        $("table tbody").append("<tr><td>" + "李四" + "</td><td>" + 20 + "</td><td>" + "male" + 　"</td></tr>");
+      }
+
+      if (++num == 1000){
+        return;
+      }
+
+      setTimeout(function() {
+        createTable();
+      }, 10);
+    }
+
+    createTable();
+  </script>
+</body>
+
+</html>

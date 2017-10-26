@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>汽车</title>
+    <style>
+        *{
+          margin:0;
+          padding:0;
+        }
+        .car{
+          width:250px;
+          height:100px;
+          margin-top:50px;
+          animation: run 2s infinite;
+        }
+        @keyframes run{
+          0%{
+            transform:skewX(30deg) translateX(0px);
+          }
+
+          100%{
+            transform:skewX(-30deg) translateX(1000px);
+          }
+        }
+    </style>
+  </head>
+  <body>
+      <div class="car">
+        <img src="./image/car.jpg" width="250" height="100" alt="">
+      </div>
+  </body>
+</html>

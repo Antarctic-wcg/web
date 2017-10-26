@@ -1,0 +1,19 @@
+/*
+extend
+*/
+.one, .two {
+  font-size: 16px;
+  background: yellow;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px; }
+
+.bigSize, .two {
+  font-size: 100px;
+  font-weight: bolder; }
+
+.two {
+  color: red; }
+
+/*# sourceMappingURL=05-extend.css.map */

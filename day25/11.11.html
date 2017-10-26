@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .box{
+        width:900px;
+        height: 150px;
+        padding: 0 50px;
+        border: 1px solid red;
+        margin:0 auto;
+      }
+      .box span{
+        display: inline-block;
+        height:150px;
+        line-height: 150px;
+        font-size:50px;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="box">
+      <span style="margin-right:50px;">距离双11还有:</span>
+      <span id="day"></span>
+      <span>天</span>
+      <span id="hours"></span>
+      <span>小时</span>
+      <span id="min"></span>
+      <span>分</span>
+      <span id="sconds"></span>
+      <span>秒</span>
+    </div>
+
+    <script type="text/javascript">
+      var a = new Date("2017-11-11 11:11:11");
+
+
+
+      var day1 = document.getElementById("day");
+      var hours1 = document.getElementById("hours");
+      var min1 = document.getElementById("min");
+      var sconds1 = document.getElementById("sconds");
+
+
+
+
+
+
+      // console.log(d.getTime());
+      // console.log(a.getTime());
+
+      setInterval(function(){
+        var d = new Date();
+
+        var e = (a.getTime()-d.getTime());
+        //天数
+        var day = (e/(1000*60*60*24));
+        // console.log(parseInt(day));
+        //除去天数剩下的毫秒数
+        var noe = (e%(1000*60*60*24));
+        // console.log(noe);
+
+
+        //剩下的毫秒数有多少小时
+        var hours = (noe/(1000*60*60));
+        // console.log(parseInt(hours));
+        //除去小时剩余多少毫秒
+        var two = (noe%(1000*60*60));
+        // console.log(two);
+
+
+        //剩余毫秒有多少分钟
+        var min = (two/(1000*60));
+        // console.log(parseInt(min));
+        //除去分后有多少毫秒
+        var three = (two%(1000*60));
+        // console.log(three);
+
+
+        //剩下多少秒
+        var sconds = (three/1000);
+        // console.log(parseInt(sconds));
+
+        function flag(arg){
+          return arg > 9 ? arg : "0" + arg;
+        }
+
+        day1.innerHTML = parseInt(day);
+        hours1.innerHTML = flag(parseInt(hours));
+        min1.innerHTML = flag(parseInt(min));
+        sconds1.innerHTML = flag(parseInt(sconds));
+
+      },1000);
+
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <script type="text/javascript">
+
+      //String.prototype.match()方法
+
+
+      // * 默认是贪婪匹配？？？
+      /*
+      *， + 后边携带 ？用于最短匹配
+      取消贪婪匹配，进行最短匹配！！！！！！
+      */
+      var ret = "worldhelloooooooo".match(/hello*?/);
+      console.log(ret);
+      /*
+      ret[0]是匹配的字符串
+      index	匹配到的字符位的开始位置
+      input	原始字符串
+      */
+
+
+      //正则表达式中用 ( )包裹的部分就是捕获
+      //match方法中，从数组[1]开始的都是捕获
+      var ret = "worldhelloooooooo".match(/world(hello+?)/);
+      console.log(ret);
+
+
+
+      /*
+      作业：
+
+      json VS xml???
+
+
+
+      自学如下方法？？？？
+      String.prototype.replace()方法
+      Regexp.prototype.exec()方法
+      String.prototype.match()方法
+
+
+      var sen = [“习近平”, “薄熙来”, “周永康”];
+      要求：在文本输入框中查找以上的敏感词汇，并且将敏感词汇标红。
+      */
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,63 @@
+
+//注释
+/*
+comment
+*/
+
+$fontSize: 20px;
+$colorRed: red;
+$colorGreen: green;
+$border: 1px solid yellow;
+$width:1190px;
+
+.one {
+  color: $colorRed;
+  font-size: $fontSize;
+  height: 10px;
+  width:$width;
+}
+
+.two {
+  color: $colorRed;
+  border: $border;
+}
+
+/**************************************************/
+
+// #{}
+
+$direction: top;
+.border-#{$direction} {
+  border-#{$direction}: $border;
+}
+
+
+/**************************************************/
+// list
+$px: 10px 20px 30px 40px;
+$colors: red green blue purple yellow;
+
+.three {
+  font-size: nth($px,3);
+  color: nth($colors,1);
+}
+
+.four {
+  height: nth($px,4);
+}
+
+
+$px2: 10px 20px, 30px 40px, 50px 60px;
+.five {
+  font-size: nth(nth($px2,3),1);
+}
+
+
+/**************************************************/
+//map
+
+$px2: (h1:3em, h2: 2em, h3:1em);
+
+.six {
+  font-size: map-get($px2, h2);
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>翻转导航</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .list {
+        width: 800px;
+        height: 50px;
+        margin: 100px auto;
+
+        /*transform-style: preserve-3d;*/
+      }
+
+      .list li {
+        width: 200px;
+        height: 50px;
+        background: pink;
+        float: left;
+        position: relative;
+
+        transition: all 0.5s;
+
+        /*设置3d效果*/
+        transform-style: preserve-3d;
+      }
+
+      .list li span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+      }
+
+      .list li span:nth-child(1){
+        transform:  translateZ(25px);
+        background: pink;
+      }
+
+      .list li span:nth-child(2){
+        transform:  rotateX(90deg) translateZ(25px);
+        background: yellow;
+      }
+
+      .list li:hover {
+        transform: rotateX(-90deg);
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <ul class="list">
+      <li>
+        <span>首页一</span>
+        <span>首页二</span>
+      </li>
+      <li>
+        <span>首页一</span>
+        <span>首页二</span>
+      </li>
+      <li>
+        <span>首页一</span>
+        <span>首页二</span>
+      <li>
+        <span>首页一</span>
+        <span>首页二</span>
+      </li>
+      </li>
+
+    </ul>
+
+  </body>
+</html>

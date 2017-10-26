@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box{
+        width:600px;
+        height:600px;
+        margin:0 auto;
+      }
+      #canvas {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="./1.png" style="display:none;" id="img" alt="">
+      <canvas id="canvas"></canvas>
+      <button id="font">font</button>
+      <button id="left">left</button>
+      <button id="right">right</button>
+      <button id="back">back</button>
+    </div>
+
+
+    <script type="text/javascript">
+      var can = document.getElementById("canvas");
+      var img = document.getElementById("img");
+      var font =document.getElementById("font");
+      var left =document.getElementById("left");
+      var right =document.getElementById("right");
+      var back =document.getElementById("back");
+      can.height=600;
+      can.width=600;
+      var cxt = can.getContext("2d");
+
+      img.onload = function(){
+        cxt.drawImage(img,0,0,40,65,280,280,40,65);
+      }
+
+      back.addEventListener("click",function(){
+        // left.removeEventListener("click");
+        
+        var i = 0;
+        var back2 = setInterval(function(){
+          can.height = 600;
+          can.widtht = 600;
+
+            cxt.drawImage(img,i,0,40,65,280,280,40,65);
+
+            setTimeout(function(){
+              can.height = 600;
+              can.widtht = 600;
+              cxt.drawImage(img,i,0,40,65,280,280,40,65);
+            },99);
+            i += 40;
+
+            if(i > 120){
+              i = 0;
+              console.log("11121");
+            }
+        },100);
+      },false);
+
+      left.addEventListener('click',function (){
+
+        var i = 0;
+        var left2 = setInterval(function(){
+
+            cxt.drawImage(img,i,65,40,65,280,280,40,65);
+
+            setTimeout(function(){
+              can.height = 600;
+              can.widtht = 600;
+              cxt.drawImage(img,i,65,40,65,280,280,40,65);
+            },99);
+            i += 40;
+
+            if(i > 120){
+              i = 0;
+              console.log("11121");
+            }
+
+        },100);
+      },false);
+      // left.addEventListener("click",left1,false);
+      // left.removeEventListener("click",left1,false);
+      // right.addEventListener("click",function(){
+      //   left.removeEventListener("click",left1,false);
+      // },false)
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>面向对象</title>
+</head>
+
+<body>
+
+  <!--
+    面向对象：所有的操作都是以对象为中心，围绕对象展开，对象拥有属性和方法，属性和方法都是对象的附属。
+    特点：封装 继承 多态
+    -->
+
+
+  <script type="text/javascript">
+    //创建对象
+
+    //1. 使用已有的类型创建
+    var date = new Date();
+    console.log(typeof date); //object
+    var arr = new Array();
+
+    //创建空对象
+    var obj = new Object();
+    console.log(obj); //{}
+
+    //2. 直接赋值
+    var stu = {};
+    stu.name = 'lisi';
+    stu.age = 10;
+    //属性
+    stu.grade = 1;
+
+    //方法
+    stu.play = function() {
+      console.log("play...");
+    };
+    //对象都是由 key:value组成,键值对
+    console.log(stu);
+    stu.play();
+
+
+    //属性名称,加不加引号都可以！！！！
+    var dog = {
+      name: 'zhaosi',
+      age: 1,
+      color: 'yellow',
+      size: 'small',
+      bark: function() {
+        console.log("wang ....");
+      }
+    };
+
+    //使用 . 访问属性时，不可以有引号！！！！！！！
+    console.log(dog.name);
+
+    //使用 []访问属性时,要有引号！！！！！！！
+    console.log(dog["name"]);
+
+
+
+    var person = {
+      name: 'lisi',
+      age: 10,
+      hobby: ['read', 'sprot', 'sleep'],
+      contact: [{
+        guanxi: 'father',
+        name: 'xxx',
+        age: 100
+      }, {
+        guanxi: 'mather',
+        name: 'xxx',
+        age: 100
+      }]
+    };
+    console.log(person);
+
+
+    //对象的遍历。。。
+    for (var prop in person) {
+      //此处用[]访问属性值
+      console.log("for in :",person[prop]);
+    }
+
+    /*
+    只要是对象，就可以添加属性和方法！！！！！
+    */
+  </script>
+
+
+
+
+</body>
+
+</html>

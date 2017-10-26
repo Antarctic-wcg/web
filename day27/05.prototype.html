@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <script type="text/javascript">
+
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+    }
+
+    Person.prototype.sayHello = function () {
+      console.log("hello...");
+    };
+
+    Person.prototype.hobby = [1,2,3,4];
+
+
+    var one = new Person('lisi', 22);
+
+    // one.hobby = [10,2,3,4];//直接赋值，那么就是添加自己属性
+    one.hobby.push(20);//直接在已有的基础上修改，当然修改的就是原型了
+
+    var two = new Person('zhangsan', 20);
+
+    console.log("one = ", one);
+    console.log("two = ", two);
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>饼状图</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box{
+        width:600px;
+        height:600px;
+        margin:0 auto;
+      }
+      #canvas {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="box">
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <script type="text/javascript">
+
+      var can = document.getElementById("canvas");
+
+      can.height=600;
+      can.width=600;
+
+      var cxt = can.getContext("2d");
+
+      cxt.beginPath();
+      cxt.strokeStyle = "red";
+      cxt.fillStyle = "red";
+      cxt.moveTo(300,300);
+      cxt.arc(300,300,100,0,Math.PI*2*0.4,false);
+      cxt.fill();
+      cxt.font = "16px 宋体";
+      cxt.strokeText("40%", 350,400);
+      cxt.closePath();
+
+      cxt.beginPath();
+      cxt.fillStyle = "blue";
+      cxt.moveTo(300,300);
+      cxt.arc(300,300,100,Math.PI*2*0.4,Math.PI*2*0.7,false);
+      cxt.fill();
+      cxt.strokeStyle = "blue";
+      cxt.font = "16px 宋体";
+      cxt.strokeText("30%", 150,300);
+
+      cxt.beginPath();
+      cxt.fillStyle = "yellow";
+      cxt.moveTo(300,300);
+      cxt.arc(300,300,100,Math.PI*2*0.7,Math.PI*2*0.9,false);
+      cxt.fill();
+      cxt.strokeStyle = "yellow";
+      cxt.font = "16px 宋体";
+      cxt.strokeText("20%", 300,180);
+
+      cxt.beginPath();
+      cxt.fillStyle = "pink";
+      cxt.moveTo(300,300);
+      cxt.arc(300,300,100,Math.PI*2*0.9,Math.PI*2,false);
+      cxt.fill();
+      cxt.strokeStyle = "pink";
+      cxt.font = "16px 宋体";
+      cxt.strokeText("10%", 400,280);
+
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,57 @@
+.one, .two {
+  width: 1600px; }
+
+.two {
+  height: 200px; }
+  .two .three {
+    width: 400px; }
+
+h1 {
+  font-size: 1em; }
+
+h2 {
+  font-size: 2em; }
+
+h3 {
+  font-size: 3em; }
+
+.item-1 {
+  width: 1px; }
+
+.item-2 {
+  width: 1px; }
+
+@media all and (min-width: 500px) {
+  .three {
+    height: 300px; }
+
+  .four {
+    color: red; } }
+.six, .fix {
+  width: 200px;
+  height: 200px; }
+
+.fix {
+  height: 300px; }
+
+@media all and (max-width: 1200px) {
+  .seven {
+    flex-grow: 1; } }
+.eight {
+  margin: 0;
+  padding: 0px; }
+
+.night {
+  font-size: 2em;
+  height: 6px; }
+  .night .ten {
+    width: 200px; }
+    .night .ten > .evelen {
+      height: 200px; }
+
+.border {
+  border-style: solid;
+  border-left-width: 2px;
+  border-left-color: red; }
+
+/*# sourceMappingURL=lianxi.css.map */

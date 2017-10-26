@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>正则表达式</title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    //直接赋值的方式，使用 /pattern/
+    var pattern1 = /d{2,5}/g;
+    pattern1 = /hello/g;
+    console.log(typeof pattern1);
+
+
+    //使用new 构造
+    pattern1 = new RegExp(/hello/, 'g');
+    pattern1 = new RegExp('hello', 'g');
+
+
+
+    //符号！！！！
+    console.log(/hello/.test("world")); //false
+    console.log(/hello/.test("worldhellosjgksdhjkhkj")); //true
+    console.log(/./.test("`")); //true
+    console.log(/./.test("\nsjhkjhkjhkhj")); //true
+    console.log(/\d/.test("nsjhkjhkjhkhj")); //false
+    console.log(/\D/.test("nsjhkjhkjhkhj")); //
+
+    console.log(/\s/.test("skjgkjhkjdhkjhkj")); //false
+    console.log(/\s/.test("skjgkjh\vkjdhkjhkj")); //
+    console.log(/\w/.test("\n\raghh"));
+
+
+    //取非
+    console.log(/[^abc]/.test("abcaaaaaaa")); //false
+    console.log(/[^abc]/.test("1")); //true
+
+    console.log(/[12345]/.test("6")); //false
+    console.log(/[12345]/.test("0")); //false
+
+    //连续数字 "-"
+    console.log(/[1-5]/.test("1")); //true
+    console.log(/[a-z]/.test("ABKGJKHJK123")); //false
+    console.log(/[a-z]/.test("mABKGJKHJK123")); //true
+
+
+
+
+    // ^,$是整行匹配
+    console.log(/^world$/.test("helloworld"));
+    console.log(/^world$/.test("worldhello"));
+    console.log(/^world$/.test("worldworld")); //false
+    console.log(/^world$/.test("world")); //true
+    console.log(/^world/.test("worldskjgkdjhkjh")); //true
+    console.log(/world$/.test("worldskjgkdjhkjhworld")); //true
+
+    // "xxxx   hello  xxxhelloyyy"
+    // \b 用于匹配单词边界
+    console.log(/\bhello\b/.test("xxxx   hello  xxxhelloyyy"));
+
+
+
+    //元字符
+    console.log(/zo*/.test("z"));//true
+    console.log(/zo*/.test("zooooooooooooooooooo"));//true
+
+
+    //  "\"表示转义字符，就是转换字符的含义
+    console.log(/zo\*/.test("zo*"));//
+
+
+    //+
+    console.log(/zo+/.test("z"));//false
+    console.log(/zo+/.test("zo"));//true
+    console.log(/zo+/.test("zoooooooooooo"));//true
+
+    //?
+    console.log(/zo?/.test("z"));//true
+    console.log(/zo?/.test("zo"));//true
+    console.log(/zo?/.test("zooooooooo"));//true
+
+    //{}
+    console.log(/\d{4,5}/.test("12"));//false
+    console.log(/\d{4,5}/.test("12345ahgjhj"));//true
+    console.log(/\d{4,5}abc/.test("128abc"));//false
+    console.log(/\d{4,}/.test("1231421525"));
+    console.log(/hello\d{4}world/.test("hello12345world"));//false
+
+
+    // ()就是整体
+    console.log(/(hello){4}/.test("hellohellohellohello"));//true
+
+    // | 或, 整体出现
+    console.log(/abc|hello/.test("abc"));//true
+    console.log(/abc|hello/.test("hello"));//true
+    console.log(/abc|hello/.test("ab"));//false
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

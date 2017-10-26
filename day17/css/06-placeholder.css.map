@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA;;EAEE;AAEF,IAAS;EACP,SAAS,EAAE,KAAK;EAChB,WAAW,EAAE,MAAM;;AAGrB,IAAW;EACT,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,MAAM;;AAGrB,IAAK;EACH,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,KAAK",
+"sources": ["../scss/06-placeholder.scss"],
+"names": [],
+"file": "06-placeholder.css"
+}

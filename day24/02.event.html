@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>兼容性event对象</title>
+  </head>
+  <body>
+
+    <button id="btn">按钮</button>
+
+    <script type="text/javascript">
+    var btn = document.getElementById("btn");
+
+    btn.onclick = function (e) {
+      var event = e || window.event;
+    };
+
+    </script>
+
+  </body>
+</html>

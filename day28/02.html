@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>call,apply</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    function fun() {
+      console.log(arguments);
+    }
+
+    fun.call(null,1,2,3,4);
+    fun.call(null,[1,2,3,4]);//call可以传递任何参数
+
+
+    fun.apply(null, [1,2,3,4]);//只能传递一个数组
+
+    </script>
+
+  </body>
+</html>

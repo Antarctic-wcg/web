@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>敏感词替换</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #text {
+        width: 600px;
+        height: 200px;
+        margin: 50px auto;
+        border: 1px solid #ddd;
+      }
+
+      span.color-red {
+        color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <!-- contenteditable用于实现文本输入区域  -->
+    <div id="text" contenteditable="true"></div>
+
+    <div style="text-align:center;"><button id="btn">点击标红敏感词</button></div>
+
+    <script type="text/javascript">
+    var sen = ["习近平", "薄熙来", "周永康", "郭伯雄"];
+
+    var text = document.getElementById("text");
+    var btn = document.getElementById("btn");
+
+    btn.addEventListener("click", function(){
+      var oldStr = text.innerHTML;//需要使用innerHTML获取内容
+
+      if (oldStr === ''){
+        alert("内容不能为空！");
+        return;
+      }
+
+      var temp =  sen.join("|");
+      var pattern = new RegExp(temp, "ig");
+
+      var newStr = oldStr.replace(pattern, function(match){
+        // return "<span class='color-red'>" + match + "</span>";
+
+        return "<mark>" + match + "</mark>";
+      });
+
+      //重新写回去
+      text.innerHTML = newStr;
+    }, false);
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

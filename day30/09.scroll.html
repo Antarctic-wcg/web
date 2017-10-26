@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>scroll</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 2000px;
+      }
+
+      #top{
+        position: fixed;
+        bottom: 100px;
+        right: 100px;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        background: green;
+        cursor: pointer;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="top">顶部</button>
+
+
+    <script src="./scroll.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    var back = document.getElementById("top");
+
+    //监听scroll的滚动
+    window.onscroll = function () {
+      var d = getScroll().top;
+
+      console.log(d);
+
+      if (d >= 200){
+        back.style.display = "block";
+      }else {
+        back.style.display = "none";
+      }
+    }
+
+
+    back.onclick = function () {
+      // 2 种方法
+      // document.documentElement.scrollTop = 0;
+      window.scrollTo(0,0);
+    };
+
+
+    /*
+    学习jQuery  .scroll()事件， .scrollLeft() .scrollTop()
+    作业:
+    1. 多屏滚动
+    2. http://home.baidu.com/  心电图
+    */
+
+
+
+    </script>
+
+
+
+  </body>
+</html>

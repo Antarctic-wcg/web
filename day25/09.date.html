@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>获得时间</title>
+</head>
+
+<body>
+
+
+
+  <script type="text/javascript">
+      var d = new Date();
+      console.log(d); //Wed Jul 26 2017 15:05:43 GMT+0800 (中国标准时间)
+      //
+      // console.log("年", d.getFullYear());
+      // console.log("月", d.getMonth() + 1);
+      // console.log("日", d.getDate());
+      // console.log("时", d.getHours());
+      // console.log("分", d.getMinutes());
+      // console.log("秒", d.getSeconds());
+      // console.log("毫秒", d.getMilliseconds());
+      // console.log(d.getTime());
+
+      //可以设置时间
+      d.setFullYear(2018);
+      d.setMonth(11);//getMonth, setMonth,都是从0开始
+      console.log(d); //12月份
+
+      d = new Date("2017-11-11 0:0:0");
+      console.log(d);
+      console.log(d.toTimeString());
+      console.log(d.toDateString());
+
+
+      /*
+      距离2017-11-11 11:11:11 倒计时
+      比如：距离双11剩余 xxx天xxx小时xxx分xxx秒
+      */
+
+
+  </script>
+
+</body>
+
+</html>

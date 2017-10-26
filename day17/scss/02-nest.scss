@@ -1,0 +1,72 @@
+//selector nest
+
+.one {
+  p {
+    color: red;
+  }
+
+  >p {
+    color: green;
+  }
+
+  .two {
+    font-size: 20px;
+    &:hover {
+      height: 20px;
+    }
+
+    &::after {
+      content: "hehe";
+    }
+  }
+}
+
+//attr nest
+.three {
+  border:{
+    style: solid;
+    width: 10px;
+    color: red;
+  }
+}
+
+
+//@at-root
+
+.four {
+  color: red;
+
+  .four-1 {
+    font-size: 10px;
+  }
+
+  @at-root .four-2 {
+    font-size: 20px;
+  }
+
+  @at-root .five {
+    background: yellow;
+  }
+
+}
+
+
+
+.six {
+  height: 10px;
+  color: red;
+}
+
+
+
+@media screen and (width:800px) {
+  .four {
+    color: green;
+
+    /*
+    @at-root .seven{
+      font-size: 10px;
+    }
+    */
+  }
+}

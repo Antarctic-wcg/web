@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>右键菜单</title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+
+      .menu{
+        width:200px;
+        height: 200px;
+        border:1px solid #696969;
+        position:absolute;
+        display:none;
+      }
+      .menu p{
+        text-align:center;
+        height: 40px;
+        line-height:40px;
+        cursor:pointer;
+      }
+      .menu p:hover{
+        background:#e8a522;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <p>返回</p>
+      <p>刷新</p>
+      <p>保存</p>
+      <p>打印</p>
+      <p>退出</p>
+    </div>
+
+    <script type="text/javascript" src="./jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+
+        $(document).contextmenu(function(event){
+          event.preventDefault();
+          $(".menu").show().css({"top":event.pageY,"left":event.pageX});
+        });
+
+        $(document).click(function(){
+          $(".menu").hide();
+        })
+
+
+      });
+
+    </script>
+
+
+  </body>
+</html>

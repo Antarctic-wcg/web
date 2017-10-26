@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>clock</title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      .box{
+        width:600px;
+        height:600px;
+        margin:50px auto;
+        border:2px solid #000;
+        border-radius: 50%;
+        position: relative;
+      }
+      .itm{
+        width:20px;
+        height: 560px;
+        border-top: 20px solid #000;
+        border-bottom: 20px solid #000;
+        position: absolute;
+        top:0;
+        left:290px;
+
+
+      }
+      .box .itm:nth-child(2){
+        transform: rotateZ(60deg);
+      }
+      .box .itm:nth-child(3){
+        transform: rotateZ(90deg);
+      }
+      .box .itm:nth-child(4){
+        transform: rotateZ(150deg);
+      }
+      .box .itm:nth-child(5){
+        transform: rotateZ(210deg);
+      }
+      .box .itm:nth-child(6){
+        transform: rotateZ(300deg);
+      }
+
+      .hour,.fen,.sec{
+        position:absolute;
+        bottom:300px;
+        transform-origin: bottom;
+      }
+      .hour{
+        width:30px;
+        height: 100px;
+        background: #000;
+        left:285px;
+        border-radius: 5px 5px 0 0;
+        animation: hour 43200s linear infinite;
+      }
+      .fen{
+        width:20px;
+        height: 150px;
+        background: #000;
+        left:290px;
+        border-radius: 5px 5px 0 0;
+        animation: fen 3600s linear infinite;
+      }
+      .sec{
+        width:10px;
+        height: 200px;
+        background: #000;
+        left:295px;
+        background: #961717;
+        border-radius: 5px 5px 0 0;
+        animation: sec 60s linear infinite;
+      }
+      @keyframes hour {
+        0%{
+          transform:rotateZ(0deg);
+        }
+        100%{
+          transform:rotateZ(360deg);
+        }
+      }
+      @keyframes fen {
+        0%{
+          transform:rotateZ(0deg);
+        }
+        100%{
+          transform:rotateZ(360deg);
+        }
+      }
+      @keyframes sec {
+        0%{
+          transform:rotateZ(0deg);
+        }
+        100%{
+          transform:rotateZ(360deg);
+        }
+      }
+      .d{
+        width:30px;
+        height:30px;
+        border-radius: 50%;
+        background: #000;
+        position: absolute;
+        top:283px;
+        left:286px;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="box">
+          <div class="itm"></div>
+          <div class="itm"></div>
+          <div class="itm"></div>
+          <div class="itm"></div>
+          <div class="itm"></div>
+          <div class="itm"></div>
+
+          <div class="hour"></div>
+          <div class="fen"></div>
+          <div class="sec"></div>
+          <div class="d"></div>
+      </div>
+  </body>
+</html>

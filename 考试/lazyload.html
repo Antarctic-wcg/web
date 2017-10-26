@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>图片延迟加载的原理</title>
+  <style>
+    img {
+      width: 300px;
+      height: 300px;
+      background: url("./lazyload.gif")  0 0 /100% 100% no-repeat;
+
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div>
+    <!-- <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt="">
+    <img src="./1.jpg" originSrc="./1.jpg" alt=""> -->
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+    <img src="" originSrc="./1.jpg" alt="">
+  </div>
+
+
+
+  <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(function() {
+
+      var imgs = $('img'); //jQuery数组
+
+      var count = 0;
+
+      //当前垂直滚动距离
+      var current = 0;
+      var clientHeight = $(window).height();
+
+      $(window).scroll(function() {
+        current = $(window).scrollTop();
+
+        imgs.each(function(index, elem) {
+          //此处的elem,是DOM对象
+          //使用$(elem)
+
+          if ((current + clientHeight) > $(elem).offset().top){
+            var imgSrc = $(elem).attr("originSrc");//获得标签上的特性
+            $(elem).attr("src", imgSrc);
+          }
+        });
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>

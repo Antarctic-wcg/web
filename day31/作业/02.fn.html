@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>高阶函数</title>
+  </head>
+  <body>
+
+
+    <script type="text/javascript">
+
+    function sum(){
+      var sum = 0;
+
+      for (var i = 0; i <arguments.length; i++) {
+        sum += arguments[i];
+      }
+
+      return sum;
+    }
+
+    function square(num){
+      return num * num;
+    }
+
+    /*
+    fn1:求和的函数
+    fn2:求平方的函数
+    */
+    function sumAndSquare(fn1,fn2){
+      return function () {
+        return fn2(fn1.apply(null, arguments));
+      }
+    }
+
+    var fn = sumAndSquare(sum,square);
+    console.log(fn(1,2,3,4));
+
+
+
+    </script>
+
+  </body>
+</html>

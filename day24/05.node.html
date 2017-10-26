@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>节点</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <button id="btn">节点</button>
+
+    <script type="text/javascript">
+    var btn = document.getElementById('btn');
+    console.log(btn.nodeType);//1 标签
+    console.log(btn.nodeName);//标签的名字 BUTTON
+    console.log(document.nodeType);//9  document
+
+
+
+    </script>
+
+  </body>
+</html>

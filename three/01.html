@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>进度条</title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      .kong{
+        width:80%;
+        height:50px;
+        margin: 50px auto;
+        /*border:1px solid blue;*/
+        /*border-radius:50px;*/
+      }
+      .box{
+        width:0;
+        height:50px;
+        line-height: 50px;
+        /*border-radius:50px;*/
+        background: blue;
+        /*border:1px solid blue;*/
+        color:white;
+        text-align:center;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="kong">
+      <div class="box" id="box">
+        <span class="du" id="du"></span>
+      </div>
+    </div>
+
+    <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      // var w = $("#box").width();
+      //
+      // console.log(w);
+
+
+      var boxd = setInterval(function(){
+        var k = $(".kong").width();
+        var w = $("#box").width();
+        w += 5;
+        $("#box").css("width",w);
+        var w2 = $("#box").width();
+
+        
+        $("#du").html(parseInt(w2/k*100) + "%" );
+
+
+        if((k-w2)===5 || (k-w2) < 5){
+          $("#box").css("width",k);
+          var k2 = $(".kong").width();
+          var w3 = $("#box").width();
+          if(k2===w3){
+            $("#du").html("100%");
+          }
+          clearInterval(boxd);
+        }
+
+      },20);
+
+
+    </script>
+
+  </body>
+</html>

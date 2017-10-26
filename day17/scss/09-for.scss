@@ -1,0 +1,15 @@
+
+$start: 1;
+$end: 10;
+
+@for $var from $start through $end {
+  .item-#{$var} {
+    font-size: 2px * $var;
+  }
+}
+
+@for $var from $start to $end {
+  .list-#{$var} {
+    font-size: 2px * $var;
+  }
+}

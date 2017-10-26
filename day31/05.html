@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>canvas</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+
+      #canvas {
+        border: 1px solid red;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <canvas id="canvas">不好意思，你的浏览器不支持canvas</canvas>
+
+    <script type="text/javascript">
+
+    //canvas绘制步骤！！！！！
+    var can = document.getElementById("canvas");
+
+
+    //canvas对象有width,height属性
+    can.width = 600;
+    can.height= 600;
+
+    //1.获得画布上下文(比喻：找到画板上的纸)
+    var cxt = can.getContext("2d");
+
+
+    //创建一个线性渐变对象
+    var lg = cxt.createLinearGradient(0,0,200,0);
+
+    //指定渐变颜色和位置
+    lg.addColorStop(0, "red");
+    lg.addColorStop(0.3, "green");
+    lg.addColorStop(0.5, "yellow");
+    lg.addColorStop(0.8, "pink");
+    lg.addColorStop(1, "purple");
+
+    //利用渐变对象
+    cxt.fillStyle = lg;
+    cxt.fillRect(0,0,200,100);//绘制形状必须在线性渐变的坐标范围内!!!!!!!!!!!
+
+    cxt.arc(100,300,100,0,Math.PI*2,false);
+    cxt.fill();
+
+
+    </script>
+
+  </body>
+</html>

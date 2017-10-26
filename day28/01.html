@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+
+    var value = 0;
+
+    var obj = {
+      value: 10,
+      fun: function() {
+        console.log(this.value);
+      }
+    };
+
+    obj.fun();
+    obj.fun.call(this);//this === window
+    obj.fun.call(null);//自动变为window
+
+  </script>
+
+</body>
+
+</html>

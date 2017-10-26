@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>作业1</title>
+
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      ul{
+        list-style: none;
+      }
+      a{
+        text-decoration:none;
+      }
+      .box{
+        width:790px;
+        height:340px;
+        margin:0 auto;
+        position:relative;
+      }
+      .box1>div{
+        position:absolute;
+        top:0;
+        left:0;
+      }
+      .img1{
+        z-index:6;
+      }
+      .img2{
+        z-index:5;
+      }
+      .img3{
+        z-index:4;
+      }
+      .img4{
+        z-index:3;
+      }
+      .img5{
+        z-index:2;
+      }
+      .img6{
+        z-index:1;
+      }
+      #list{
+        position:absolute;
+        bottom:0;
+        right:0;
+        height:10px;
+        padding:10px 0;
+        z-index: 9;
+      }
+      #list li{
+        border-radius:50%;
+        float: left;
+        margin-right: 10px;
+        background: #666;
+      }
+      #list li a{
+        display:inline-block;
+        width:15px;
+        height:15px;
+        text-align: center;
+        color: #000;
+      }
+
+      #img1:target{
+        z-index: 8;
+      }
+      #im1:not(:target){
+        z-index: 6;
+      }
+      #img2:target{
+        z-index: 8;
+      }
+      #img2:not(:target){
+        z-index: 5;
+      }
+      #img3:target{
+        z-index: 8;
+      }
+      #img3:not(:target){
+        z-index: 4;
+      }
+      #img4:target{
+        z-index: 8;
+      }
+      #img4:not(:target){
+        z-index: 3;
+      }
+      #img5:target{
+        z-index: 8;
+      }
+      #img5:not(:target){
+        z-index: 2;
+      }
+      #img6:target{
+        z-index: 8;
+      }
+      #img6:not(:target){
+        z-index: 1;
+      }
+      /*@keyframes one {
+        0% {
+          transform: translate(-100%, 0);
+        }
+
+        100% {
+          transform: translate(0, 0);
+        }
+      }*/
+    </style>
+
+  </head>
+  <body>
+
+    <div class="box">
+      <div class="box1" id="box1">
+        <div id="img1" class="img1">
+          <img src="./images/tab01.jpg" alt="">
+        </div>
+        <div id="img2" class="img2">
+          <img src="./images/tab02.jpg" alt="">
+        </div>
+        <div id="img3" class="img3">
+          <img src="./images/tab03.jpg" alt="">
+        </div>
+        <div id="img4" class="img4">
+          <img src="./images/tab04.jpg" alt="">
+        </div>
+        <div id="img5" class="img5">
+          <img src="./images/tab05.jpg" alt="">
+        </div>
+        <div id="img6" class="img6">
+          <img src="./images/tab06.jpg" alt="">
+        </div>
+      </div>
+
+      <ul id="list">
+
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+      var box1 = document.getElementById("box1");
+      var ul = document.getElementById("list");
+      var temp = box1.children;
+      // console.log(temp);
+      for (var i = 0; i < temp.length; i++) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.innerHTML = i+1;
+        a.setAttribute("href","#img"+(i+1));
+        a.setAttribute("id","img"+(i+1));
+        li.appendChild(a);
+        ul.appendChild(li);
+      }
+
+
+
+
+
+    </script>
+
+
+  </body>
+</html>

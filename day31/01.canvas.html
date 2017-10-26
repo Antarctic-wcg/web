@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>canvas</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+
+      #canvas {
+        border: 1px solid red;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <canvas id="canvas">不好意思，你的浏览器不支持canvas</canvas>
+
+    <script type="text/javascript">
+
+    //canvas绘制步骤！！！！！
+
+    var can = document.getElementById("canvas");
+
+    //canvas对象有width,height属性
+    can.width = 600;
+    can.height= 600;
+
+    //1.获得画布上下文(比喻：找到画板上的纸)
+    var cxt = can.getContext("2d");
+
+
+    //2. 开始绘制
+    cxt.beginPath();//表示重新开始绘制，和之前的绘制没有关联!!!!!!!
+
+   //绘制直线
+   cxt.moveTo(0,0);
+   cxt.lineTo(100,150);//会以上一个lineTo的坐标作为本次的起点
+   cxt.lineTo(120,250);
+   cxt.lineTo(220,20);
+
+   //描边
+   cxt.strokeStyle = "red";//设置描边颜色
+   cxt.stroke();
+
+   //结束绘制
+   cxt.closePath();
+
+
+   cxt.beginPath();
+   cxt.moveTo(260,260);
+   cxt.lineTo(360,260);
+   cxt.lineTo(360,310);
+   cxt.lineTo(260,310);
+   cxt.lineTo(260,260);
+   cxt.lineWidth = 10;
+   cxt.strokeStyle = "black";//设置描边颜色
+   cxt.stroke();
+   cxt.fillStyle = "red";
+   cxt.fill();
+
+
+   //直接绘制矩形
+   cxt.beginPath();
+   cxt.fillStyle = "pink";
+   cxt.fillRect(350,350,50,50);
+
+
+   cxt.strokeStyle = "blue";
+   cxt.lineWidth = 5;
+   cxt.strokeRect(400,400,50,60);
+
+
+   //擦除
+  //  cxt.clearRect(0,0,600,600);//擦除整个画布
+  // can.width = 600;//重新设置宽高，也可以清除整个画布
+
+
+  cxt.moveTo(100,400);
+  cxt.arc(100,400, 50,0, Math.PI*0.4,false);//绘制圆弧
+  // cxt.stroke();
+  cxt.fill();
+
+
+  cxt.lineWidth = 1;
+  cxt.font = "100px 宋体";//设置字体,和css中的font属性一样
+  cxt.strokeText("我喜欢钱", 100,100);
+  // cxt.fillStroke("我喜欢钱", 100,100);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>节点属性</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .color-red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="box" class="f" data="10">节点属性操作</div>
+    <input id="input" type="text" value="只读" >
+
+
+    <script type="text/javascript">
+    var box = document.getElementById("box");
+    //获得属性
+    console.log(box.getAttribute("data"));
+    console.log(box.getAttribute("class"));
+    console.log(box.getAttribute("id"));
+
+    //设置属性
+    box.setAttribute("class", "f color-red");
+    box.setAttribute("hello", "world");
+
+
+    //删除属性
+    box.removeAttribute("hello");
+
+
+    var input = document.getElementById("input");
+    input.setAttribute("readonly", "true");
+
+    // input.removeAttribute("readonly");
+
+
+    </script>
+  </body>
+</html>

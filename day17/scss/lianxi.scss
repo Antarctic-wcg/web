@@ -1,0 +1,109 @@
+@function big($width:800px){
+  @return $width*2;
+}
+
+.one{
+  width: big(800px);
+}
+
+.two{
+  @extend .one;
+  height:200px;
+  .three{
+    width:big(200px);
+
+  }
+}
+
+$heading:(h1:1em,h2:2em,h3:3em);
+@each $header,$size in $heading{
+  #{$header}{
+    font-size:$size;
+  }
+}
+
+$start:1;
+$end:3;
+@for $i from $start to $end{
+  .item-#{$i}{
+    width:$end /3+px;
+  }
+}
+
+@mixin media-screen($width){
+  @media all and(min-width:$width){
+    @content;
+  }
+}
+
+@include media-screen(500px){
+  .three{
+    height:300px;
+  }
+  .four{
+    color:red;
+  }
+}
+
+@mixin gen{
+  @content;
+}
+
+
+@include gen{
+  .six{
+    width:200px;
+    height:200px;
+  }
+}
+.fix{
+
+  @extend .six;
+  height:300px;
+}
+
+@mixin media-max($max-width){
+  @media all and(max-width:$max-width){
+    @content;
+  }
+}
+
+@include media-max(1200px){
+  .seven{
+    flex-grow:1;
+  }
+}
+
+@mixin ceshi{
+  margin:0;
+  padding:0px;
+}
+
+.eight{
+  @include ceshi;
+}
+
+
+
+$px2: (h1:3em, h2: 2em, h3:1em);
+$px3: (p1:2px, p2: 4px, p3:6px);
+.night {
+  font-size: map-get($px2, h2);
+  height: map-get($px3, p3);
+  .ten{
+    width:200px;
+    >.evelen{
+      height:200px;
+    }
+  }
+}
+
+.border{
+  border:{
+    style:solid;
+    left:{
+      width:2px;
+      color:red;
+    }
+  }
+}

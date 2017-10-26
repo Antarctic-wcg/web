@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <script type="text/javascript">
+      a = ['hello', 'world', 'abc', 'abc', 'efg', 'ghgjgjkgj', "skgjkjg"];
+
+      b = [];
+
+
+        // a.forEach(function(elem,index){
+        //   if(b === elem){
+        //     b.push(elem);
+        // }
+        for (var i = 0; i < a.length; i++) {
+          if(b.indexOf(a[i])===-1){
+            b.push(a[i]);
+          }
+        }
+      console.log(b);
+
+
+
+    //  for (var j = 0; j < a.length ; j++) {
+     //
+     //
+    //     stop: for (var i = 0; i <= a.length; i++) {
+    //       if (a.indexOf(a[j],i)=== -1) {
+     //
+    //         break stop;
+    //       }
+     //
+    //       i=a.indexOf(a[j],i);
+    //       console.log("a["+a[j]+"]"+","+i+"----"+a.indexOf(a[j],i));
+     //
+     //
+    //       // b.push(a[j]);
+     //
+    //       a.forEach(function (elem) {
+    //         if(elem !== b[j]){
+    //           b.push(a[j]);
+     //
+    //         }else{
+     //
+     //
+    //         }
+    //       });
+     //
+     //
+    //     }
+     //
+     //
+     //
+    //   }
+    //   console.log(b);
+
+
+    </script>
+
+
+  </body>
+</html>

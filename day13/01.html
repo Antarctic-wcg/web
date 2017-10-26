@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        *{
+          margin:0;
+          padding:0;
+        }
+
+        .clearfix::after{
+          content:"";
+          display: block;
+          visibility:hidden;
+          height: 0;
+          clear:both;
+
+        }
+        .clearfix{
+          zoom:1;
+        }
+        hr{
+          float: left;
+          width: 100%;
+
+        }
+
+        .main{
+          width:950px;
+          height:1300px;
+          background: #d4d4d4;
+          margin:0 auto;
+        }
+        .s01,.s02,.s03,.s04,.s05,.s06,.s07,.s08,.s09,.s10,.s11,.s12,.s13,.s14,.s15,.s16,.s17,.s18{
+          border:1px solid #9d9d9d;
+          float:left;
+          background: #fff;
+          width:200px;
+          height:200px;
+          margin: 10px 15px;
+          border-color:red;
+        }
+        .s01{
+          border-radius:50%;
+        }
+        .s02{
+          border-radius:200px 200px 0 0;
+        }
+        .s03{
+          width:200px;
+          height: 100px;
+          border-radius:200px 200px 0 0;
+        }
+        .s04{
+          border-radius:100px 0 0 0;
+        }
+        .s05{
+          border-radius:200px 0 0 0;
+        }
+        .s06{
+          width: 180px;
+          height:80px;
+          border-radius: 70%;
+        }
+        .s07{
+          width:100px;
+          border-radius: 70%;
+        }
+        .s08{
+          width: 300px;
+          height:100px;
+          border-radius: 300px 300px 0 0/200px 200px 0 0;
+        }
+        .s09{
+          width:20px;
+          height:20px;
+          border-radius:50%;
+          border:70px solid red;
+        }
+        .s10{
+          width:20px;
+          height:20px;
+          border-radius:50px;
+          border:70px solid red;
+        }
+        .s11{
+          width:20px;
+          height:20px;
+          border-radius:80px 0 80px 0;
+          border:70px solid red;
+        }
+        .s12{
+          width: 0px;
+          height: 0px;
+          border: 100px solid;
+          border-color:red blue yellow green;
+
+        }
+        .s13{
+          width: 0px;
+          height: 0px;
+          border: 100px solid;
+          border-color:red white yellow green;
+
+        }
+        .s14{
+          width: 0px;
+          height: 0px;
+          border: 100px solid;
+          border-radius: 50%;
+          border-color:red white red red;
+
+        }
+        .s16{
+          width: 200px;
+          height: 0;
+          border-radius: 50%;
+          border-top: 100px solid red;
+          border-bottom: 100px solid green;
+
+        }
+
+        .top15{
+          width: 200px;
+          height: 100px;
+          background: red;
+          border-radius: 200px 200px 0 0;
+        }
+        .bottom15{
+          width: 200px;
+          height: 100px;
+          background: #51aa28;
+          border-radius: 0 0 200px 200px;
+        }
+
+        .s17{
+          border-radius:50%;
+        }
+        .b01{
+          width:10px;
+          height:10px;
+          border:45px solid green;
+          background: red;
+          border-radius:50%;
+          margin-top: -50px;
+          float: left;
+        }
+        .b02{
+          width:10px;
+          height:10px;
+          border:45px solid red;
+          background: green;
+          border-radius:50%;
+          margin-top: -50px;
+          float: left;
+        }
+        .s18{
+          height:100px;
+          background: red;
+          border-radius:10px;
+        }
+        .ss18{
+          width: 0px;
+          height: 0px;
+          border: 10px solid;
+          border-color:#d4d4d4 red #d4d4d4 #d4d4d4;
+          margin-top: 10px;
+          margin-left: -20px;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="main">
+          <div class="s01"></div>
+          <div class="s02"></div>
+          <div class="s03"></div>
+          <div class="s04"></div>
+          <hr>
+          <div class="s05"></div>
+          <div class="s06"></div>
+          <div class="s07"></div>
+          <div class="s08"></div>
+          <hr>
+          <div class="s09"></div>
+          <div class="s10"></div>
+          <div class="s11"></div>
+          <div class="s12">
+
+          </div>
+          <hr>
+          <div class="s13"></div>
+          <div class="s14"></div>
+          <div class="s15">
+            <div class="top15"></div>
+            <div class="bottom15"></div>
+          </div>
+          <div class="s16">
+
+          </div>
+          <hr>
+          <div class="s16">
+            <div class="b01"></div>
+            <div class="b02"></div>
+          </div>
+          <div class="s18">
+            <div class="ss18"></div>
+          </div>
+      </div>
+  </body>
+</html>

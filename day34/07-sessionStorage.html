@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>本地存储</title>
+  </head>
+  <body>
+
+
+    <a href="./08-sessionStorage.html" target="_blank">跳转到08</a>
+
+    <script type="text/javascript">
+    //window.sessionStorage
+    /*
+    sessionStorage的存储周期为会话结束（关闭为止）
+    */
+
+    sessionStorage.setItem("name", 'lisi');
+    sessionStorage.setItem("age", '10');
+
+    /*
+    window.addEventListener("storage", function(event){
+      console.log("***********");
+      console.log("新值",event.newValue);
+      console.log("旧值",event.oldValue);
+    },false);
+    */
+
+
+
+    </script>
+
+  </body>
+</html>

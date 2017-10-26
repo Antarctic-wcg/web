@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+
+    // 自定义构造函数,通过new来创建对象
+    //构造函数，的函数名字，首字母都大写
+
+    function Dog(type,color){
+      this.type = type;
+      this.color = color;
+      this.eat = function(){
+        console.log('dog eat ....');
+      };
+      this.drink = function(){
+        console.log('dog drink....');
+      };
+    }
+
+
+    /*
+    //直接调用构造函数，其中内部的this === window
+    Dog('taidi', 'red');
+    console.log(type,color,eat,drink);
+    */
+
+    /*
+    使用new 关键词调用 构造函数时，函数中的this就是创建的对象本身.
+    不需要要return,this会自动返回
+    */
+    var one = new Dog('taidi', 'brown');
+    var two = new Dog('jinmao', 'yellow');
+    console.log(one);
+    console.log(two);
+
+
+    </script>
+
+  </body>
+</html>

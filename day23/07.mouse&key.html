@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html,body {
+        height: 2000px;
+      }
+
+      #box {
+        width: 400px;
+        height: 400px;
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="box"></div>
+    <textarea id="text" rows="8" cols="80"></textarea>
+
+    <script>
+      var box = document.getElementById("box");
+      var text = document.getElementById("text");
+
+      //e.button可以知道那个键被按下
+      box.onclick = function (e) {
+        console.log("click",e.button);
+      };
+
+      box.oncontextmenu = function (e) {
+        console.log("contextmenu",e.button);
+      };
+
+      box.onmouseup = function (e) {
+        console.log("mouseup: ", e.button);
+      }
+
+      text.onkeyup = function (e) {
+        console.log('输入为： ', e.key);
+      }
+
+
+      var start = 0, end = 0;
+
+      document.addEventListener('touchstart', function(e){
+        start = e.targetTouches[0].clientX;
+        console.log(start);
+      },false);
+
+
+      document.addEventListener('touchend', function(e){
+        end = e.changedTouches[0].clientX;
+        console.log(end);
+
+        if (end >= start){
+          console.log("right");
+        } else if (end < start) {
+          console.log("left");
+        }
+      },false);
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

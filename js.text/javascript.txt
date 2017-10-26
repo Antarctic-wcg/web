@@ -1,0 +1,4 @@
+javascript
+数据类型：boolean布尔型,string字符串,number数值,object对象或null,undefined未定义,function函数
+其他类型转换成字符串：console.log(a.toString())
+其他类型转换成布尔型：console.log(Boolean())

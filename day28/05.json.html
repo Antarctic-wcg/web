@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>json的序列化，解析</title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    var stu = {
+      "name": "lisi",
+      "age": 15
+    };
+
+    //json序列化,将json对象变为字符串
+    var str = JSON.stringify(stu, function(k, v) {
+      if (k === 'age') {
+        return v + 20;
+      } else
+        return v;
+    });
+    console.log(stu);
+    console.log(str);
+
+
+
+
+    //json的解析，将字符串变为json对象
+    console.log(JSON.parse(str));
+
+    /*
+    //要解析的字符串必须是json格式的字符串
+    console.log(JSON.parse("hello"));
+    */
+
+    //parse,可以传递第二个参数(函数),用于对返回的对象进行修改
+    var ret = JSON.parse(str, function(key, value) {
+      console.log(key);
+      if (key === 'age') {
+        return value + 10;
+      } else {
+        return value;
+      }
+    });
+    console.log(ret);
+  </script>
+
+</body>
+
+</html>

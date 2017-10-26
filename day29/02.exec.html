@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+    var re = /quick\s(brown).+?(jumps)/ig;
+    var str = "The Quick Brown Foxre Jumps Over The Lazy Dog The Quick Brown Foxre Jumps Over The Lazy Dog The Quick Brown Foxre Jumps Over The Lazy Dog";
+    var result;
+
+    //exec使用g时，需要多次调用！！！！！
+    while ((result = re.exec(str)) !== null) {
+      console.log(result);
+      console.log(re.lastIndex);
+    }
+
+
+
+    console.log("-----------m 标志 用于多行匹配(\n)-------------");
+
+    str = "hello world hehe!\nhello world hehe!\nhello world hehe!";
+    // str = "hello world hehe!hello world hehe!hello world hehe!";
+    result = str.match(/^hello world hehe!$/mg);
+    console.log(result);
+
+    
+
+  </script>
+</body>
+
+</html>

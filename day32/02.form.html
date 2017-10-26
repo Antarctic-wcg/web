@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>智能表单</title>
+  </head>
+  <body>
+
+
+    <!--默认开启智能校验功能，如果添加了 novalidate，那么就不在校验  -->
+    <form  id="formid"  action="#" method="get"  novalidate>
+
+      邮箱： <input name="email" type="email"  list="email-lists" autofocus> <br><br>
+      <!-- datalist配合list属性给input提供选项  -->
+      <datalist id="email-lists">
+        <option>xxx@123.com</option>
+        <option>xxx@456.com</option>
+        <option>xxx@789.com</option>
+      </datalist>
+
+
+      URL: <input name="url" type="url"> <br><br>
+      number: <input name="number" type="number" min="10" max="20" step="5"> <br><br>
+      range: <input name="range" type="range" min="0"  max="1" step="0.2" value="0.8">  <br><br>
+
+
+      <!--pattern 直接填写正则表达式  -->
+      pattern: <input type="text" name="pattern" pattern="[\s\S]+@xxx.com"> <br><br>
+
+      placeholder: <input type="text" placeholder="请输入汉字！！！"> <br><br>
+      必填选项:  <input name="required" type="text" required> <br><br>
+
+      搜索: <input type="search" name="search"> <br><br>
+
+
+      日期：
+      <input type="date"> <br><br>
+      <input type="month"> <br><br>
+      <input type="time"> <br><br>
+
+
+      <input type="submit" formaction="可以覆盖form的action属性" value="提交">
+      <input type="reset" value="重置">
+    </form>
+
+    <!-- 可以将该input作为一个其他的表单控件，一块进行提交 -->
+    <input form="formid" type="text" name="name">
+
+  </body>
+</html>

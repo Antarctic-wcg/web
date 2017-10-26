@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>闭包的优缺点</title>
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+    /*
+            全局变量容易被修改，没有办法保护。
+            而且全局资源有限，需要尽可能的减少全局变量的定义。
+            */
+    // var count = 0;
+
+    /*
+     闭包的优点：
+     1. 减少全局变量的定义，实现变量的私有化
+     2. 可以根据不同参数，动态生成一些值。
+
+     缺点：
+     1. 私有变量会常驻内存，直到该变量使用完毕，会增加内存消耗
+    */
+
+
+    /*变量私有化*/
+    function fun() {
+      var count = 0;
+      return function() {
+        count++;
+        console.log("count = ", count);
+      };
+    }
+    var addCount = fun();
+    addCount();
+
+
+
+    /*动态生成值*/
+    function fun2(str) {
+      return function() {
+        return "<h1>" + str + "</h1>";
+      }
+    }
+    var createHtml = fun2("helloworld");
+    console.log(createHtml());
+
+    var createHtml2 = fun2("apple");
+    console.log(createHtml2());
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

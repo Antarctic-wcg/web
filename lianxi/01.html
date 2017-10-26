@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>练习</title>
+  </head>
+  <body>
+
+    <button type="button" id="btn">按钮</button>
+
+    <script type="text/javascript">
+      /*
+      自定义一个函数,实现bind一样的功能
+      func是要绑定的函数
+      context是要绑定的this
+      arg....需要提前传入的参数
+      */
+      // var btn = document.getElementById("btn");
+      // btn.onclick = function(){
+      //   console.log("11");
+      //   console.log(typeof this);
+      // };
+      var value = 0;
+      var btn = document.getElementById("btn");
+      btn.value = 10;
+
+
+
+      function handler(){
+
+        console.log(this.value);
+      };
+
+
+      btn.addEventListener("click", handler,true);
+
+
+
+      // console.log(this);
+
+
+      // function bind(func,context){
+      //   var pre = Array.prototype.slice.call(arguments,2);
+      //   return function(){
+      //     var newArg = Array.prototype.slice.call(arguments,0);
+      //     var arg = pre.concat(newArg);
+      //     return func.apply(context,arg);
+      //   };
+      // };
+      //
+      // var value=0;
+      // var obj = {
+      //   value : 10
+      // };
+      //
+      // function text(){
+      //   console.log(this.value);
+      //   console.log(arguments);
+      // }
+      //
+      // var newFun = bind(text,obj,1,2,3);
+      //
+      // newFun(6,5);
+
+
+
+    </script>
+
+  </body>
+</html>

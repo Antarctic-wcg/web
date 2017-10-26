@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>全屏api</title>
+  <style>
+   #divid {
+     width: 100px;
+     height: 100px;
+     background: yellow;
+   }
+  </style>
+</head>
+
+<body>
+
+  <video id="video" controls poster="./3.jpg">
+      <source src="./video/fun.mp4">
+  </video>
+
+  <div>
+    <button id="btn1">video全屏</button>
+    <button id="btn2">div全屏</button>
+  </div>
+
+
+  <div id="divid"></div>
+
+
+  <script type="text/javascript">
+    var v = document.getElementById("video");
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var d = document.getElementById("divid");
+
+
+    function fullScreen(elem) {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullScreen) {
+        elem.webkitRequestFullScreen();
+
+        //webkit核心的问题
+        // elem.style.width = "100%";
+        // elem.style.height = "100%";
+      } else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+    }
+
+    btn1.onclick = function() {
+      fullScreen(v);
+    }
+
+
+
+
+    btn2.onclick = function() {
+      fullScreen(d);
+    }
+  </script>
+
+</body>
+
+</html>

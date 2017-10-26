@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    Person.prototype.sayHello = function() {
+      console.log("say hello ...");
+    };
+
+    Person.prototype.getName = function () {
+      //this是 Person产生的对象
+      console.log(this.name);
+    };
+
+    Person.prototype.setName = function (name) {
+      this.name = name;
+    };
+
+
+    var one = new Person('lisi', 20);
+    // console.log(one.name);
+    // console.log(one.age);
+    one.getName();
+    one.setName('zhangsan');
+    // one.getName();
+
+
+
+  </script>
+
+</body>
+
+</html>

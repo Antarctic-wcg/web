@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>自定义事件添加、移除函数</title>
+</head>
+
+<body>
+
+  <button id="btn">点击</button>
+  <button id="btn2">删除</button>
+
+  <script type="text/javascript">
+    var btn = document.getElementById("btn");
+    var btn2 = document.getElementById("btn2");
+
+    /*
+    addEvent:用于添加事件，兼容浏览器
+    默认冒泡
+    */
+    function addEvent(obj, eventName, handler) {
+      if (obj.addEventListener) {
+        obj.addEventListener(eventName, handler, false);
+      } else if (obj.attachEvent) {
+        obj.attachEvent('on' + eventName, handler);
+      } else {
+        obj["on" + eventName] = handler;
+      }
+    }
+
+
+
+
+    function handler() {
+      alert("handler....");
+    }
+
+    addEvent(btn, 'dblclick', handler);
+
+    /*
+    removeEvent: 实现事件移除？？？？？
+    */
+    function removeEvent(obj,eventName,handler){
+      if(obj.removeEventListener){
+        obj.removeEventListener(eventName, handler, false);
+      }else if(obj.detachEvent){
+        obj.detachEvent("on"+eventName,handler);
+      }else{
+        obj["on"+eventName] = null;
+      }
+    }
+
+    function add(){
+      removeEvent(btn,"dblclick",handler);
+    }
+    addEvent(btn2, 'click', add);
+
+
+  </script>
+
+</body>
+
+</html>

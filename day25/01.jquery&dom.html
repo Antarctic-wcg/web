@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jquery 对象和 DOM对象的转换</title>
+  </head>
+  <body>
+
+    <div id="box">box</div>
+
+
+    <div class="s">1</div>
+    <div class="s">2</div>
+    <div class="s">3</div>
+
+
+    <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    var jqBox = $("#box");//jquery对象
+    var domBox  = document.getElementById("box");//DOM对象
+
+    // dom ====> jQuery
+    console.log($(domBox).css("color", "red"));
+
+    // jQuery =====> dom
+    console.log(jqBox[0]);
+
+
+
+    var divs = $(".s");
+    console.log(divs);//jQuery
+    console.log(divs[0]);//
+    console.log(divs[1]);//
+    console.log(divs[2].style.color = "green");//
+    console.log(divs.get(0));
+    console.log(divs.get(1));
+    console.log(divs.get(2));
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+
+/*
+extend
+*/
+
+.one {
+  font-size: 16px;
+  background: yellow;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+}
+
+.bigSize {
+  font-size: 100px;
+  font-weight: bolder;
+}
+
+
+.two {
+  @extend .one;
+  @extend .bigSize;
+  color: red;
+}

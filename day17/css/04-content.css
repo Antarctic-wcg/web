@@ -1,0 +1,17 @@
+/*
+conent
+*/
+@media screen and (max-width: 800px) {
+  .one {
+    height: 20px; }
+
+  .two {
+    color: red; } }
+@media screen and (max-width: 1200px) {
+  .four {
+    width: 300px; } }
+/***********************************/
+body {
+  height: 200px; }
+
+/*# sourceMappingURL=04-content.css.map */

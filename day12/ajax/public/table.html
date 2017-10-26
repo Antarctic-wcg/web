@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>表格</title>
+    <style>
+        *{
+          margin:0;
+          padding:0;
+        }
+        table{
+          margin:0 auto;
+        }
+        th,td{
+          width:180px;
+          text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <button id="btn">点击添加</button>
+    <table border="1" cellspacing="2" id="student">
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>年龄</th>
+          <th colspan="2">电话</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+      <!-- <tr>
+        <th>小王</th>
+        <td>男</td>
+        <td>545646465</td>
+        <td rowspan="3">海淀区</td>
+      </tr>
+      <tr>
+        <th>小李</th>
+        <td>女</td>
+        <td>55454545</td>
+      </tr>
+      <tr>
+        <th>小张</th>
+        <td>男</td>
+        <td>5654545454</td>
+      </tr> -->
+    </table>
+
+
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    // 兼容低版本ie浏览器的代码,对于现代浏览器可以省略部分代码
+      function createXHR(){
+        if (typeof XMLHttpRequest != "undefined"){
+          return new XMLHttpRequest();
+        } else if (typeof ActiveXObject != "undefined"){
+          if (typeof arguments.callee.activeXString != "string"){
+            var versions = [ "MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0",
+            "MSXML2.XMLHttp"], i, len;
+            for (i=0,len=versions.length; i < len; i++){
+              try {
+                new ActiveXObject(versions[i]);
+                arguments.callee.activeXString = versions[i];
+                break;
+              } catch (ex){
+                //跳过
+              }
+            }
+          }
+          return new ActiveXObject(arguments.callee.activeXString);
+        } else {
+          throw new Error("No XHR object available.");
+        }
+      }
+
+      $(function(){
+        $("#btn").click(function(){
+
+            var xhr = createXHR();
+            xhr.open("post","/table",true);
+            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function(){
+              if(xhr.readyState === 4){
+
+                if(xhr.status >= 200 && xhr.status < 300){
+
+                  // var data = JSON.parse(xhr.response).stus;
+                  //
+                  // for(var i = 0,len = data.length; i < len; i++){
+                  //   $("#student tbody").append("<tr><td>"+data[i].name+"</td><td>"+data[i].age+"</td><td>"+data[i].tel+"</td></tr>");
+                  // }
+                  var data = JSON.parse(xhr.response).stus;
+                  for(var i = 0,len = data.length;i <len;i++){
+                    $("#student tbody").append("<tr><td>"+data[i].name+"</td><td>"+data[i].age+"</td><td>"+data[i].tel+"</td></tr>");
+                  }
+
+                }
+              }
+            }
+
+            xhr.send();
+
+
+        });
+      })
+    </script>
+
+
+
+  </body>
+</html>

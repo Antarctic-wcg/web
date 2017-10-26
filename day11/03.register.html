@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .user {
+        padding: 20px 25px;
+        width: 360px;
+        height: 25px;
+        border: 1px solid #ddd;
+
+        font-family: "Microsoft YaHei", "Hiragino Sans GB";
+        font-size: 14px;
+
+        margin: 50px auto;
+        position: relative;
+      }
+
+      .user .hint {
+        float: left;
+        height: 25px;
+        line-height: 25px;
+        letter-spacing: 12px;
+      }
+
+      .user input {
+        float: left;
+        margin-left: 25px;
+        border: none;
+        outline-style: none;
+
+        width:200px;
+        height: 25px;
+      }
+
+      .user .holder {
+        height: 25px;
+        position: absolute;
+        top: 21px;
+        left: 145px;
+        color: rgb(204, 204, 204);
+      }
+
+      .format {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        color: #ddd;
+      }
+
+      .show {
+        display: block;
+      }
+
+      .hide {
+        /*
+        display: none， 让元素彻底消失，不占任何页面位置(没有该节点)
+        */
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="user">
+      <div class="hint">用户名</div>
+      <input type="text" name="username">
+      <div class="holder">您的账户名和登录名</div>
+
+      <div class="format hide">支持中文、字母、数字、“-”“_”的组合，4-20个字符</div>
+    </div>
+
+
+    <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $(".user .holder").click(function(){
+          // $(this).addClass("hide");
+          $(this).hide();
+
+          //让input获得焦点， .focus()
+          $(".user input").focus();
+
+          //让条件显示
+          // $(".user .format").removeClass("hide").addClass("show");
+          //使用jQuery中show()方法
+           $(".user .format").show();
+        });
+
+
+        $(".user input").blur(function(){
+
+          // $(".user .holder").removeClass("hide").addClass("show");
+          // $(".user .format").removeClass("show").addClass("hide");
+
+          $(".user .holder").show();
+          $(".user .format").hide();
+        });
+
+      });
+
+      /*
+      搞清楚get,post方法， 区别!!!!!!!
+      */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>clock</title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      .box{
+        width:600px;
+        height:600px;
+        margin: 0 auto;
+        position:relative;
+        background: url("./clock/clock.jpg");
+      }
+      .box>div{
+        width:30px;
+        height:600px;
+        position:absolute;
+        left:50%;
+        /*top: 0;*/
+        transform: translateX(-50%);
+
+        /*transform-origin:center center;*/
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="box">
+      <div id="hours">
+        <img src="./clock/hour.png" alt="">
+      </div>
+      <div id="min">
+        <img src="./clock/minute.png" alt="">
+      </div>
+      <div id="sconds">
+        <img src="./clock/second.png" alt="">
+      </div>
+    </div>
+
+    <script type="text/javascript">
+
+      var hours = document.getElementById("hours");
+      var min = document.getElementById("min");
+      var sconds = document.getElementById("sconds");
+
+      setInterval(function(){
+        var a = new Date();
+        // console.log(a.getHours());
+        var millis = a.getMilliseconds();
+        var s = a.getSeconds() + millis/1000;
+        var m = a.getMinutes() + s/60;
+        var h = a.getHours() + m/60;
+
+        hours.setAttribute("style","transform: translateX(-50%) rotate("+ h*30 +"deg)");
+        min.setAttribute("style","transform: translateX(-50%) rotate("+ m*6 +"deg)");
+        sconds.setAttribute("style","transform: translateX(-50%) rotate("+ s*6 +"deg);");
+
+
+      },100)
+
+
+
+    </script>
+
+  </body>
+</html>

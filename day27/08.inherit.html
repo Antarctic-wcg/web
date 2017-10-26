@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>继承：借用构造函数实现继承</title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    Person.prototype.sayHello = function() {
+      console.log("say hello ...");
+    };
+
+
+    function Student(name,age,score){
+
+      //借用Person构造函数
+      //只能继承构造函数内部的属性，但是原型的属性和方法无法实现继承！！！！
+      Person.call(this,name,age);
+      this.score = score;
+    }
+
+
+    var one = new Student('lisi', 22, 59);
+    console.log(one);
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>scroll</title>
+    <style media="screen">
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        .f {
+          width: 300px;
+          height: 200px;
+          border: 1px solid red;
+          margin: 50px auto;
+
+          /*overflow: hidden;*/
+          /*overflow: scroll;*/
+          overflow: auto;
+        }
+
+        .s {
+          width: 500px;
+        }
+    </style>
+  </head>
+  <body>
+
+
+    <button id="btn">按钮</button>
+    <button id="btn2">水平滚动调节</button>
+
+    <div class="f" id="f">
+      <div class="s">
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+        看上缴国库大家好空间的孔令辉就来得及来看大家好凉快到家了环境的客户经理大家好
+      </div>
+    </div>
+
+    <script type="text/javascript">
+
+    var f = document.getElementById('f');
+    var s = f.children[0];
+    var btn = document.getElementById("btn");
+    var btn2 = document.getElementById("btn2");
+
+    console.log(f.scrollHeight);//实际内容的高度
+    console.log(f.scrollWidth);//实际内容的宽度
+
+
+    btn.onclick = function () {
+      //通过父元素获得滚动条滚出的距离
+      console.log(f.scrollLeft);
+      console.log(f.scrollTop);
+    };
+
+    btn2.onclick = function () {
+      f.scrollLeft += 10;
+    };
+
+
+
+
+    </script>
+
+  </body>
+</html>

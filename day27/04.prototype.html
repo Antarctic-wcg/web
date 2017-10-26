@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>原型 prototype</title>
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+
+
+  /*
+  任何函数都有 prototype属性,而且该属性是个对象
+  */
+    function Dog(type, color) {
+      this.type = type;
+      this.color = color;
+    }
+
+    /*
+    所有对象共享的和属性和方法，添加在prototype上就ok了
+    */
+    Dog.prototype.eat = function() {
+      console.log('dog eat ....');
+    };
+
+    Dog.prototype.drink = function() {
+      console.log('dog drink....');
+    };
+
+    Dog.prototype.mao = true;
+
+    var one = new Dog('taidi', 'brown');
+    var two = new Dog('jinmao', 'yellow');
+    console.log(one);
+    console.log(two);
+
+
+    console.log("------------------------------");
+
+
+
+    /*
+    修改一个对象的属性，没有影响其他对象.
+    因为当修改和prototype同名的属性或者方法时，对象会在本身上重新添加同名属性，但是保留prototype,但是访问的时候自己的属性优先级高于prototype。
+    */
+    one.mao = false;
+    one.eat = function(){
+      console.log("eat eat eat ....");
+    }
+
+    console.log(one);
+    console.log(two);
+
+    console.log("------------------------------");
+
+
+    /*
+    直接修改构造函数上的prototype，影响的是其他所有的对象
+    任何对象都有 __proto__属性,该属性指向自己的构造函数的prototype
+    */
+    one.__proto__.mao = false;
+    console.log(two.mao);
+
+
+
+    var three = new Dog("wangcai", "black");
+    console.log(three.mao);//false
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

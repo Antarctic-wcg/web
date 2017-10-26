@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>input最大输入个数</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <input type="text" name='user'>
+
+    <script type="text/javascript">
+      var user = document.querySelector('input[name=user]');
+
+      //最大允许输入10个字符
+
+        // user.onkeyup = function () {
+        //   if (this.value.length > 10){
+        //     // 将前10个重新写入到input中
+        //     this.value = this.value.slice(0,10);
+        //
+        //   }
+        // };
+
+        user.onkeydown = function(){
+          if (this.value.length > 9){
+            return false;
+          }
+        }
+
+        user.onkeyup = function(e){
+          if(e.key == "Backspace"){
+            this.value = this.value.slice(0,(this.value.length-1))
+          }
+          // console.log(typeof(e.key));
+        }
+
+
+
+      /*
+      美化一下输入效果，模仿京东的注册
+      */
+
+
+    </script>
+
+  </body>
+</html>

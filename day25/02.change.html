@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>change事件</title>
+  </head>
+  <body>
+
+    <select id="menus"  name="">
+      <option value="0">白羊座</option>
+      <option value="1">金牛座</option>
+      <option value="2">摩羯座</option>
+      <option value="3">射手座</option>
+    </select>
+
+    <script type="text/javascript">
+    var menus = document.getElementById("menus");
+
+    menus.onchange = function () {
+      console.log(this.value);
+    };
+
+    </script>
+
+  </body>
+</html>

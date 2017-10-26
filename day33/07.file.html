@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>文件选择，读取</title>
+  </head>
+  <body>
+
+    <input  type="file" name="file" multiple>
+
+    <script type="text/javascript">
+
+    var file = document.querySelector('input[type=file]');
+
+    file.onchange = function () {
+      /* console.log(file.files);//FileList类型对象
+      for (var i = 0; i < file.files.length; i++) {
+        console.log(file.files[i].name);
+      }
+      */
+
+
+
+      // 读取文件
+      var reader = new FileReader();
+
+      //读取成功，之后触发
+      reader.onload = function () {
+        console.log(this.result);
+      };
+
+      //按照 (((文本))) 区异步读取一个文件，但是什么时候读取结束，？？？？
+      // reader.readAsText(file.files[0]);
+
+      //按照url读取,读取图片
+      //  reader.readAsDataURL(file.files[0]);
+
+      //按照二进制读取
+      //  reader.readAsBinaryString(file.files[0]);
+
+    };
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

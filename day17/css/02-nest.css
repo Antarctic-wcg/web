@@ -1,0 +1,39 @@
+.one p {
+  color: red; }
+.one > p {
+  color: green; }
+.one .two {
+  font-size: 20px; }
+  .one .two:hover {
+    height: 20px; }
+  .one .two::after {
+    content: "hehe"; }
+
+.three {
+  border-style: solid;
+  border-width: 10px;
+  border-color: red; }
+
+.four {
+  color: red; }
+  .four .four-1 {
+    font-size: 10px; }
+  .four-2 {
+    font-size: 20px; }
+  .five {
+    background: yellow; }
+
+.six {
+  height: 10px;
+  color: red; }
+
+@media screen and (width: 800px) {
+  .four {
+    color: green;
+    /*
+    @at-root .seven{
+      font-size: 10px;
+    }
+    */ } }
+
+/*# sourceMappingURL=02-nest.css.map */

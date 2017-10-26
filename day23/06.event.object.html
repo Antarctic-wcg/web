@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>event事件对象</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,body {
+      height: 2000px;
+    }
+
+    #f {
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+    }
+
+
+    #box {
+      width: 400px;
+      height: 400px;
+      background: yellow;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="f">
+    <button id="btn">按钮</button>
+  </div>
+  <a href="https://www.baidu.com" id="link">超链接</a>
+
+  <div id="box"></div>
+
+
+
+  <script type="text/javascript">
+    var btn = document.getElementById("btn");
+    var f = document.getElementById("f");
+    var link = document.getElementById("link");
+    var box = document.getElementById("box");
+
+
+    btn.onclick = function(e) {
+      // console.log(event);
+      console.log("btn............");
+      console.log(this); //this是注册该事件处理函数的元素
+      console.log(e.currentTarget); //等价于this
+      console.log(e.target); //表示触发事件的源头元素
+
+
+      //停止事件传播
+      e.stopPropagation();
+    };
+
+
+    f.onclick = function(e) {
+      console.log("f............");
+      console.log(this); //this是注册该事件处理函数的元素
+      console.log(e.currentTarget); //等价于this
+      console.log(e.target); //表示触发事件的源头元素
+    };
+
+
+    link.onclick = function(e) {
+      console.log("我被取消了。。。。");
+
+      //阻止默认行为
+      e.preventDefault();
+    };
+
+    document.onclick = function (e) {
+      //page是整个页面
+      console.log("pageX  = ", e.pageX);
+      console.log("pageY  = ", e.pageY);
+
+      //screen整个屏幕
+      console.log("screenX= ", e.screenX);
+      console.log("screenY= ", e.screenY);
+
+      //client浏览器可视窗口
+      console.log("clientX= ", e.clientX);
+      console.log("clientY  = ", e.clientY);
+    }
+
+
+  </script>
+
+</body>
+
+</html>

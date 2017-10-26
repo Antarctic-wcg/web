@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>尚合</title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+
+      }
+      .head{
+        width:auto;
+        height: 775px;
+
+      }
+      .head-t{
+        width:980px;
+        height: 60px;
+        margin:0 auto;
+      }
+      .logo{
+        width:179px;
+        height:60px;
+        background: url("./img/shanghe/logo.png") left center no-repeat;
+        float:left;
+      }
+      .search{
+        width:200px;
+        height:45px;
+        float:right;
+        padding-top:15px;
+      }
+      .search img{
+        float:left;
+      }
+      .nav-b{
+        width:auto;
+        height:50px;
+        background: url("./img/shanghe/nav_bg.png") repeat-x;
+        position: -webkit-sticky;
+  			position: sticky;
+  			top: -1px;
+      }
+      .nav{
+
+        width: 980px;
+        height: 50px;
+        margin:auto;
+      }
+      .nav ul li{
+        float:left;
+        height:50px;
+        line-height: 50px;
+        list-style:none;
+        width:130px;
+        border-right:1px solid #dddbd8;
+        text-align: center;
+      }
+      .nav ul li a{
+        text-decoration:none;
+        color:#000000;
+      }
+      .nav ul li a:hover{
+        color:#2c48ac;
+      }
+      .banner{
+        width:980px;
+        margin: 0 auto;
+      }
+      .d{
+        width:980px;
+        margin: 0 auto;
+        height: 45px;
+        background: url("./img/shanghe/point.png") center center no-repeat;
+      }
+      .m-title{
+        width:auto;
+        margin: 0 auto;
+        height: 30px;
+          border-top: 1px solid #cdcdcd;
+        border-bottom: 1px solid #cdcdcd;
+        background-color: #ededed;
+      }
+      .m-tl{
+        width: 880px;
+        margin: auto;
+        height: 30px;
+        font-size: 12px;
+      }
+      .timg{
+        width: 100px;
+        float: right;
+        height: 25px;
+        padding-top: 5px;
+      }
+      .m-tl h5{
+        line-height: 30px;
+        float: left;
+      }
+      .m-tl span{
+        height: 30px;
+        line-height: 30px;
+        font-size: 10px;
+        font-weight: normal;
+      }
+      .show{
+        width: 980px;
+        margin: auto;
+        padding-top: 5px;
+      }
+      .h{
+        width: 310px;
+        height: 225px;
+        float: left;
+        margin-right: 5px;
+        border:1px solid #838383;
+        position: relative;
+      }
+      .h h4{
+        padding-left: 17px;
+        margin-left: 5px;
+        background: url("./img/shanghe/canvas_r4_c4.png") no-repeat left center;
+        color: #32d22a;
+        height: 35px;
+        line-height: 35px;
+      }
+      .h h4 span{
+        float:right;
+        color:#000000;
+        padding-right:8px;
+        font-weight:normal;
+
+      }
+      .himg{
+        margin-left: 50px;
+      }
+      .hl{
+        position: absolute;
+        top: 45%;
+        left:5px;
+      }
+      .hr{
+        position: absolute;
+        top: 45%;
+        right:5px;
+      }
+      .new li{
+        list-style: none;
+        font-size: 12px;
+        height: 30px;
+        line-height: 30px;
+        margin:0 15px;
+        border-bottom:1px dotted #8e8e91;
+      }
+      .new li a{
+        text-decoration:none;
+        color:#7e7a7b;
+      }
+      .new li a:hover{
+        color:blue;
+      }
+      .js li{
+        border-bottom: none;
+        border-left: 2px solid #7bdd4a;
+        height: 18px;
+        line-height: 18px;
+        margin-top: 8px;
+        padding-left: 5px;
+      }
+
+      .js{
+        margin-bottom: 20px;
+      }
+      .h p{
+        font-size: 12px;
+        padding-left: 12px;
+
+      }
+      .main{
+        height: 280px;
+      }
+      .foot{
+        background: #303030;
+        height: 270px;
+      }
+      .foot-m{
+        width: 980px;
+        height: 180px;
+        margin:0 auto;
+        position: relative;
+      }
+      .foot-m .ftop{
+        position:absolute;
+        top:0;
+        right:20px;
+      }
+      .foot-m ul{
+        float: left;
+        list-style: none;
+        margin-left: 20px;
+        font-size: 12px;
+      }
+      .foot-m .w{
+        color:white;
+        font-size: 16px;
+      }
+      .foot-m ul li a{
+        text-decoration: none;
+        color:#9c9a99;
+      }
+      .foot-m ul li a:hover{
+        color:#62c92a;
+      }
+      hr{
+        border:1px dashed #838383;
+      }
+      .foot p{
+        text-align:center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <div class="head-t">
+          <div class="logo"></div>
+          <div class="search">
+            <img src="./img/shanghe/input_r1_c1.png" alt="">
+            <img src="./img/shanghe/input_r1_c2.png" alt="">
+          </div>
+        </div>
+        <div class="nav-b">
+          <div class="nav">
+            <ul>
+              <li><a href="#">首页</a></li>
+              <li><a href="#">智能手机</a></li>
+              <li><a href="#">平板电脑</a></li>
+              <li><a href="#">配件</a></li>
+              <li><a href="#">服务支持</a></li>
+              <li><a href="#">关于尚合</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="banner">
+          <img src="./img/shanghe/banner.png" alt="">
+        </div>
+        <div class="d"></div>
+      </div>
+
+
+      <div class="main">
+        <div class="m-title">
+            <div class="m-tl">
+              <h5>最新公告：</h5>
+              <span>尚合Aone智能手机入网证已经获取工信部门审批下发。尚合官方</span>
+              <div class="timg">
+                <img src="./img/shanghe/share.png" alt="">
+              </div>
+            </div>
+        </div>
+
+        <div class="show">
+          <div class="h">
+            <h4>新品发布</h4>
+            <div class="himg">
+              <img src="./img/shanghe/shanghe.png" alt="">
+            </div>
+            <div class="hl">
+              <img src="./img/shanghe/left.png" alt="">
+            </div>
+            <div class="hr">
+              <img src="./img/shanghe/right.png" alt="">
+            </div>
+          </div>
+          <div class="h" style="width:330px;">
+            <h4>新闻中心<span>更多</span></h4>
+            <ul class="new">
+              <li><a href="#" style="color:red;">致歉公告</a></li>
+              <li><a href="#">首批尚合Aoner已全部售馨！</a></li>
+              <li><a href="#">[媒体报道]国产高性价比 尚合Aonet四核手机评测</a></li>
+              <li><a href="#">我司产平已通过了国家强制性产品3C认证</a></li>
+              <li><a href="#">尚合Aone智能手机入网证已获工信部门审批下发</a></li>
+              <li><a href="#">我司通过ISO9001：2008国际质量管理体系认证</a></li>
+            </ul>
+          </div>
+          <div class="h">
+            <h4>技术与支持</h4>
+            <ul class="js new">
+              <li><a href="#">售后服务</a></li>
+              <li><a href="#">售后服务</a></li>
+              <li><a href="#">联保网点</a></li>
+              <li><a href="#">常见问题FAQ？</a></li>
+
+            </ul>
+            <p>深圳市汇聚众合科技发展有限公司</p>
+            <p>服务热线：400-633-7922</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="foot">
+          <div class="foot-m">
+            <ul>
+              <li class="w">尚合首页</li>
+              <li><a href="#">返回首页</a></li>
+            </ul>
+            <ul>
+              <li class="w">智能手机</li>
+              <li><a href="#">Aone-7</a></li>
+              <li><a href="#">Aone</a></li>
+            </ul>
+            <ul>
+              <li class="w">平板电脑</li>
+              <li><a href="#">尚PAD S200</a></li>
+              <li><a href="#">尚PAD S200</a></li>
+              <li><a href="#">尚PAD S200</a></li>
+              <li><a href="#">尚PAD S200</a></li>
+            </ul>
+            <ul>
+              <li class="w">配置中心</li>
+              <li><a href="#">Aone 智能手机</a></li>
+            </ul>
+            <ul>
+              <li class="w">服务与支持</li>
+              <li><a href="#">售后服务</a></li>
+              <li><a href="#">售后服务</a></li>
+              <li><a href="#">售后服务</a></li>
+              <li><a href="#">售后服务</a></li>
+              <li><a href="#">售后服务</a></li>
+              <li><a href="#">售后服务</a></li>
+            </ul>
+            <ul>
+              <li class="w">关于我们</li>
+              <li><a href="#">公司介绍</a></li>
+              <li><a href="#">公司介绍</a></li>
+              <li><a href="#">公司介绍</a></li>
+              <li><a href="#">公司介绍</a></li>
+              <li><a href="#">公司介绍</a></li>
+            </ul>
+            <ul>
+              <li class="w">新闻中心</li>
+              <li><a href="#">公司新闻</a></li>
+              <li><a href="#">公司新闻</a></li>
+              <li><a href="#">公司新闻</a></li>
+            </ul>
+            <ul>
+              <li class="w">常用链接</li>
+              <li><a href="#">百度</a></li>
+              <li><a href="#">百度</a></li>
+              <li><a href="#">百度</a></li>
+            </ul>
+            <p class="ftop">
+              <a href="#"><img src="./img/shanghe/canvas_r4_c3.png" alt=""></a>
+            </p>
+          </div>
+          <hr>
+          <p>C2011-2012版权所有 深圳市汇聚众合科技发展有限公司（品牌：尚合-SAMHAVE）服务热线：400-633-7933</p>
+          <p>经营许可者编号：粤ICP备11077821号-1</p>
+          <p><img src="./img/shanghe/baidu.png" alt=""></p>
+
+      </div>
+    </div>
+  </body>
+</html>

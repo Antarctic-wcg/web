@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>drag 拖拽</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #move , #move1{
+        width: 100px;
+        height: 100px;
+        background: rgba(255, 0, 0, 0.5);
+        margin-bottom: 20px;
+      }
+
+      #dest {
+        width: 800px;
+        height: 300px;
+        border: 5px solid red;
+        position: absolute;
+        top: 300px;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <div id="move" draggable="true"></div>
+    <div id="move1" draggable="true"></div>
+
+    <div id="dest"></div>
+
+    <script type="text/javascript">
+
+    // var move = document.querySelector('#move');
+    // var move1 = document.querySelector('#move1');
+
+    var dest = document.querySelector('#dest');
+
+
+    //开始拖拽
+    move.ondragstart = function (e) {
+      //拖拽开始时，设置数据
+      // e.dataTransfer.setData('name', 'lisi');
+
+      e.dataTransfer.setData('domId', "move");
+
+    }
+
+    move1.ondragstart = function (e) {
+      e.dataTransfer.setData('domId', "move1");
+    };
+
+
+    //
+    // //正在拖拽
+    // move.ondrag= function () {
+    //   console.log("drag.....");
+    // }
+    //
+    // move.ondragexit = function () {
+    //   console.log("drag exit ......");
+    // };
+    //
+    // //在目标区域上注册，进入事件
+    // dest.ondragenter = function () {
+    //   console.log("drag enter.......");
+    //   this.style.borderColor = "blue";
+    // }
+    //
+    //
+    // //离开目标区域
+    // dest.ondragleave = function () {
+    //   console.log("drag leave.......");
+    //   this.style.borderColor = "red";
+    // }
+
+
+
+    //拖拽对象悬停在目标区域内
+    dest.ondragover = function (e) {
+
+      //要想实现拖拽，那么必须在dragover事件中，取消默认行为
+      e.preventDefault();
+    }
+
+
+    //实现拖拽
+    dest.ondrop = function (e) {
+
+      //将要拖拽的节点添加到目标区域吧
+      // this.appendChild(move);
+
+      //拖拽结束，获得数据
+      // console.log(e.dataTransfer.getData('name'));
+
+       this.appendChild(document.querySelector("#" + e.dataTransfer.getData('domId')));
+    };
+
+
+    /*
+    1. 任意拖动一个ul中的li
+    2. 实现从浏览器外部拖拽文件，得到文件信息！！！！！！
+    3. 申请百度账号，进入百度地图，申请ak
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

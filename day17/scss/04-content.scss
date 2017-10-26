@@ -1,0 +1,40 @@
+/*
+conent
+*/
+
+
+@mixin media-screen($width) {
+  @media screen and (max-width: $width){
+    @content;
+  }
+}
+
+@include media-screen(800px){
+  .one {
+    height: 20px;
+  }
+
+  .two {
+    color: red;
+  }
+}
+
+
+@include media-screen(1200px) {
+  .four {
+    width: 300px;
+  }
+}
+
+
+/***********************************/
+
+@mixin gen-class{
+  @content;
+}
+
+@include gen-class{
+  body {
+    height: 200px;
+  }
+}

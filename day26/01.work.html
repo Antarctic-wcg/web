@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+    /*
+        实现将 字符串 "hello world google"  转换为  "olleh dlrow elgoog"
+        @src, 源字符串
+        */
+    function strReverse(str) {
+
+      /*
+      var arr = str.split(" "); //["hello", "world", "google"]
+
+      var arr1 = arr.map(function(e, i) {
+        return e.split('').reverse().join(''); //"olleh"
+      });
+
+      //["olleh" ,"dlrow" ,"elgoog"]
+
+      return arr1.join(' ');
+      */
+
+      return str.split(" ").map(function(e, i) {
+        return e.split('').reverse().join('');
+      }).join(' ');
+    }
+
+    console.log(strReverse("hello world google"));
+
+
+
+
+    /*
+    功能：将字符串转换为大写, "hello12334"
+    A-Z 的ascii 65-90
+    a-z 的ascii 97-122
+    */
+    function toUpperCase(str) {
+      var ret = '';
+
+      for (var i = 0; i < str.length; i++) {
+        //获得编码
+        var code = str.charCodeAt(i);
+
+        //查找编码范围
+        if ((code >= 97) && (code <= 122)) {
+          //fromCharCode的作用就是将编码转为字符！！！！！！
+          ret += String.fromCharCode(code - 32);
+        } else {
+          ret += str[i];
+        }
+      }
+
+      return ret;
+    }
+    console.log(toUpperCase("helloHELJGKJGKJG1234"));
+
+    /*
+    将字符串转换为数组，然后再去转为大写！！！！
+    */
+
+
+  </script>
+
+</body>
+
+</html>

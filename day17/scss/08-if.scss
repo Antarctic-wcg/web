@@ -1,0 +1,14 @@
+
+$type: redItem;
+.one {
+  height: 100px;
+  width: 100px;
+
+  @if $type == redItem {
+    background: red;
+  } @else if $type == greenItem {
+    background: green;
+  } @else {
+    background: yellow;
+  }
+}

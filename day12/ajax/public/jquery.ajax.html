@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <button id="btn">点击</button>
+    <table id="student">
+      <thead>
+        <tr>
+          <td>姓名</td>
+          <td>年龄</td>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+    <script>
+
+
+    function createXHR(){
+      if (typeof XMLHttpRequest != "undefined"){
+        return new XMLHttpRequest();
+      } else if (typeof ActiveXObject != "undefined"){
+        if (typeof arguments.callee.activeXString != "string"){
+          var versions = [ "MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0",
+          "MSXML2.XMLHttp"], i, len;
+          for (i=0,len=versions.length; i < len; i++){
+            try {
+              new ActiveXObject(versions[i]);
+              arguments.callee.activeXString = versions[i];
+              break;
+            } catch (ex){
+              //跳过
+            }
+          }
+        }
+        return new ActiveXObject(arguments.callee.activeXString);
+      } else {
+        throw new Error("No XHR object available.");
+      }
+    }
+
+      $(function(){
+
+        $("#btn").click(function(){
+
+            $.ajax({
+              method:"post",
+              url:"/table",
+              data:{},
+              var data = JSON.parse(xhr.response).stus;
+              success: function(data,textStatus,jqXHR){
+                $("#student tbody").append("<tr><td>" + data.name + "</td><td>" + data.age + "</td></tr>");
+              }
+              error: function(jqXHR,textStatus,errorThrown){
+                console.log(textStatus,errorThrown);
+              }
+            });
+
+        })
+
+      })
+
+
+
+
+    </script>
+  </body>
+</html>

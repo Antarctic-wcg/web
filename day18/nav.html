@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>nav</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7/dist/css/bootstrap.min.css">
+    <style>
+      nav{
+        height:50px;
+        overflow-y: visible;
+      }
+      .bg{
+        background: #cf4646;
+        border:none;
+        color:white;
+      }
+      .nvabar-default .navbar-brand a{
+        color:white;
+      }
+      .navbar-default .navbar-nav>li>a{
+        color:white;
+      }
+      .bg .navbar-header .icon-bar{
+        background: white;
+      }
+      .navbar-header{
+
+      }
+      header{
+        padding:48px 0;
+
+      }
+      .img img{
+        margin:0 auto;
+      }
+      header p:nth-child(2){
+        height:auto;
+        line-height:50px;
+        font-size:24px;
+      }
+      header .p a{
+        background: #cf4646;
+        color:#efbfbf;
+        box-shadow: inset 0 0 0 2px #efbfbf;
+      }
+      .p .btn-default:hover{
+        color: #333;
+        background-color: #cf4646;
+        border-color: #fff;
+        box-shadow: inset 0 0 0 2px #fff;
+      }
+      .font{
+        font-size: 18px;
+      }
+      .mtop{
+        margin-top:50px;
+      }
+      .footer{
+        margin-top:150px;
+      }
+      .footer p{
+        color:#aaa;
+        font-size:14px;
+      }
+      .footer p a{
+        color:#aaa;
+      }
+      .max-w{
+        background: #cf4646;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container-fluld bg">
+        <nav class="navbar navbar-default bg">
+          <div class="container">
+
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="color:white;">Culp中文网</a>
+
+          </div>
+
+          <div class="collapse navbar-collapse max-w" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">首页</a></li>
+              <li><a href="#">中文文档</a></li>
+              <li><a href="#">入门指南</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">插件开发</a></li>
+              <li><a href="#">常见问题</a></li>
+              <li><a href="#">使用技巧</a></li>
+            </ul>
+          </div>
+
+        </div>
+        </nav>
+
+      <header>
+        <div class="img">
+          <img src="./images/gulp-white-text.svg" class="img-responsive" alt="">
+        </div>
+        <p class="text-center">用自动化构建工具增强你的工作流程！</p>
+        <p class="p text-center">
+          <a href="#" class="btn btn-lg btn-default btn-getting-started" role="button">开始使用</a>
+        </p>
+      </header>
+
+    </div>
+
+    <div class="container font">
+
+      <div class="row mtop">
+        <div class="col-md-6 col-sx-12">
+          <h2>易于使用</h2>
+          <p>通过代码优于配置的策略，Gulp 让简单的任务简单，复杂的任务可管理。</p>
+        </div>
+        <div class="col-md-6 col-sx-12">
+          <h2>构建快速</h2>
+          <p>利用 Node.js 流的威力，你可以快速构建项目并减少频繁的 IO 操作。</p>
+        </div>
+      </div>
+
+      <div class="row mtop">
+        <div class="col-md-6 col-sx-12">
+          <h2>插件高质</h2>
+          <p>Gulp 严格的插件指南确保插件如你期望的那样简洁高质得工作。</p>
+        </div>
+        <div class="col-md-6 col-sx-12">
+          <h2>易于学习</h2>
+          <p>通过最少的 API，掌握 Gulp 毫不费力，构建工作尽在掌握：如同一系列流管道。</p>
+        </div>
+      </div>
+
+      <div class="row footer">
+        <p class="text-center">© Gulp 中文网 2015</p>
+        <p class="text-center">
+          <a href="#">京ICP备11008151号</a>
+           | 京公网安备11010802014853
+        </p>
+      </div>
+
+    </div>
+
+
+
+  <script src="./js/jquery-3.0.0.min.js"></script>
+  <script src="./bootstrap-3.3.7/dist/js/bootstrap.min.js" charset="utf-8"></script>
+  </body>
+</html>

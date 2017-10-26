@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    var str = 'For more information, see Chapter 3.4.5.1';
+    var re = /see (chapter \d+(\.\d)*)/i;
+
+    //found是数组
+    var found = str.match(re);
+    /*
+    found[0], 是正则表达式能匹配的整个字符串
+    found[1] 就是第一个捕获
+    found[2] 第二个捕获(最后匹配的)
+    */
+    console.log(found);
+
+
+    console.log("------------match g--------------");
+     str = 'For more information, see Chapter 3.4.5.1 For more information, see Chapter 3.4.5.1 For more information, see Chapter 3.4.5.1';
+     re = /see (chapter \d+(\.\d)*)/ig;
+
+    //found是数组,但是没有捕获了，只有整个字符串
+    found = str.match(re);
+    console.log(found);
+
+    
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

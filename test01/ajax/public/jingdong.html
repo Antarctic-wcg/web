@@ -1,0 +1,379 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>个人注册</title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      a{
+        text-decoration:none;
+      }
+      ul{
+        list-style: none;
+      }
+      .w{
+        width:1210px;
+        margin:auto;
+      }
+      /*头部*/
+      .head{
+        padding-top:30px;
+        height:80px;
+        box-shadow: 0 5px 4px 0px #e7e7e7;
+
+      }
+      .head-h{
+        height:50px;
+      }
+      .logo{
+        width:160px;
+        height:50px;
+        float:left;
+        background:url("./images/icon.png") no-repeat;
+      }
+      .logo-title{
+        width:150px;
+        height:50px;
+        float:left;
+        font-size:30px;
+        text-align:center;
+        color:#000;
+      }
+      .have-account{
+        padding-top:20px;
+        height:30px;
+        text-align:center;
+        color:#bdbdbd;
+        float:right;
+      }
+      .have-account a{
+        color:#000;
+      }
+      /*bottom主体*/
+      .bottom{
+
+      }
+      .bottom-t{
+        height:640px;
+
+      }
+
+
+      .b-left{
+        padding:50px 90px 0px 190px;
+        width:420px;
+        height:570px;
+        float:left;
+      }
+      .b-left form{
+        height:730px;
+      }
+      .form-item{
+        height:50px;
+        border:1px solid #cfcfcf;
+      }
+      .form-item label{
+        display:block;
+        width:90px;
+        height:50px;
+        line-height:50px;
+        color:#000;
+        font-size:16px;
+        float: left;
+        margin-left:20px;
+      }
+      .form-item input{
+        border:none;
+        width:250px;
+        height:50px;
+        line-height:50px;
+        font-size:16px;
+        color:#9c9c9c;
+        padding-left:5px;
+      }
+      .form-item input:focus{
+        outline:none;
+        color:#000;
+      }
+      .form-item .bl{
+        border-right:1px solid #cfcfcf;
+      }
+      .tips{
+        color:#bfbfbf;
+        font-size:12px;
+        height:25px;
+        line-height: 25px;
+        background:url("./images/mark.png") no-repeat top left;
+        padding-left:25px;
+        visibility:hidden;
+      }
+      .form-item.code input{
+        width:190px;
+      }
+      .code{
+        background:url("./images/Code.jpg") no-repeat right center;
+      }
+      .form-item.btn input{
+        width:190px;
+      }
+      .form-item.btn button{
+        width:107px;
+        height:48px;
+        border:none;
+        cursor:pointer;
+      }
+      .protocol{
+        height:50px;
+        line-height: 50px;
+        padding:10px 0px;
+        text-align:center;
+      }
+      .protocol a{
+        color:#1d49b8;
+        font-size:12px;
+      }
+      .button{
+        height:50px;
+        line-height:50px;
+        color:white;
+        cursor:pointer;
+        background:red;
+        text-align:center;
+      }
+
+      .b-right{
+        width:508px;
+        height:530px;
+        margin-top:50px;
+        border-left:1px solid #d9d9d9;
+        float: left;
+        /*background: blue;*/
+      }
+      .b-right>p{
+        width:250px;
+        margin-left: 50px;
+        height:80px;
+        line-height: 80px;
+        text-align: center;
+        background: url("./images/jdian.png") no-repeat 45px 25px;
+        font-size: 16px;
+        border-bottom: 1px solid #d6d6d6;
+      }
+      .b-right p a{
+        color:#636363;
+      }
+      .b-right p a:hover{
+        color:#000;
+        font-weight: bold;
+      }
+      .q{
+        background: url("./images/earth.png") no-repeat 80px 30px;
+      }
+      .q p{
+        margin-left: 125px;
+        padding: 30px 0;
+      }
+
+
+      .bottom-b{
+        height:130px;
+        border-top: 1px solid #c8c8c8;
+      }
+      .bottom-b ul{
+        width:900px;
+        height:50px;
+        margin: 0 auto;
+      }
+      .bottom-b ul li{
+        height:50px;
+        line-height: 50px;
+        margin-right:8px;
+        font-size:14px;
+        float: left;
+      }
+      .bottom-b ul li a{
+        color:#949494;
+      }
+      .bottom-b p{
+        height: 50px;
+        line-height: 50px;
+        font-size: 12px;
+        text-align: center;
+        color:#949494;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <!-- 头部 -->
+      <div class="head">
+        <div class="head-h w">
+          <div class="logo"></div>
+          <div class="logo-title">欢迎注册</div>
+          <div class="have-account">
+            已有帐号？
+            <a href="#">请登录</a>
+          </div>
+        </div>
+      </div>
+      <!-- 主体 -->
+      <div class="bottom w">
+        <!-- 主体上部分 -->
+        <div class="bottom-t">
+          <div class="b-left">
+            <form action="#">
+              <div class="form-item">
+                <label>用 户 名</label>
+                <input type="text" class="va" value="你的账户名和登录名">
+              </div>
+              <div class="tips">
+                支持中文、字母、数字、“-”“_”的组合，4-20个字
+              </div>
+              <div class="form-item">
+                <label>设置密码</label>
+                <input type="text" class="va" value="建议至少使用两种字符">
+              </div>
+              <div class="tips">
+                建议使用字母、数字和符号两种及以上的组合，6-20个字符
+              </div>
+              <div class="form-item">
+                <label>确认密码</label>
+                <input type="text" class="va" value="请再次输入密码">
+              </div>
+              <div class="tips">
+                请再次输入密码
+              </div>
+              <div class="form-item">
+                <label class="bl">中国0086</label>
+                <input type="text" class="va" value="建议使用常用手机">
+              </div>
+              <div class="tips">
+                完成验证后，你可以用该手机登录和找回密码
+              </div>
+              <div class="form-item code">
+                <label>验 证 码</label>
+                <input type="text" class="va" value="请输入验证码">
+              </div>
+              <div class="tips">
+                看不清？点击图片更换验证码
+              </div>
+              <div class="form-item btn">
+                <label>手机验证码</label>
+                <input type="text" class="va" value="请输入手机验证码">
+                <button>获取验证码</button>
+              </div>
+
+              <div class="protocol">
+                <input type="checkbox">阅读并同意
+                <a href="#">《京东用户注册协议》</a>
+                <a href="#">《隐私政策》</a>
+              </div>
+
+              <div class="button">
+                立即注册
+              </div>
+
+            </form>
+          </div>
+          <div class="b-right">
+            <p><a href="#">企业用户注册</a></p>
+            <div class="q">
+              <p><a href="#">INTERNATIONAL<br>CUSTOMERS</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- 主体footer -->
+        <div class="bottom-b">
+          <ul>
+            <li><a href="#">关于我们</a></li>
+            <li>|</li>
+            <li><a href="#">联系我们</a></li>
+            <li>|</li>
+            <li><a href="#">人才招聘</a></li>
+            <li>|</li>
+            <li><a href="#">商家入驻</a></li>
+            <li>|</li>
+            <li><a href="#">广告服务</a></li>
+            <li>|</li>
+            <li><a href="#">手机京东</a></li>
+            <li>|</li>
+            <li><a href="#">友情链接</a></li>
+            <li>|</li>
+            <li><a href="#">销售联盟</a></li>
+            <li>|</li>
+            <li><a href="#">京东社区</a></li>
+            <li>|</li>
+            <li><a href="#">京东公益</a></li>
+            <li>|</li>
+            <li><a href="#">English Site</a></li>
+          </ul>
+          <p>Copyright©2004-2016  京东JD.com 版权所有</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/jquery-3.0.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function(){
+
+
+
+        $(".va").eq(0).focus(function(){
+          $(".va").eq(0).attr("value","");
+          $(".tips").eq(0).css("visibility","visible");
+        }).blur(function(){
+
+            $(".va").eq(0).attr("value","你的账户名和登录名");
+
+          $(".tips").eq(0).css("visibility","hidden");
+        });
+
+        $(".va").eq(1).focus(function(){
+          $(".va").eq(1).attr("value","");
+          $(".tips").eq(1).css("visibility","visible");
+        }).blur(function(){
+          $(".va").eq(1).attr("value","建议至少使用两种字符组合");
+          $(".tips").eq(1).css("visibility","hidden");
+        });
+
+        $(".va").eq(2).focus(function(){
+          $(".va").eq(2).attr("value","");
+          $(".tips").eq(2).css("visibility","visible");
+        }).blur(function(){
+          $(".va").eq(2).attr("value","你的账户名和登录名");
+          $(".tips").eq(2).css("visibility","hidden");
+        });
+
+        $(".va").eq(3).focus(function(){
+          $(".va").eq(3).attr("value","");
+          $(".tips").eq(3).css("visibility","visible");
+        }).blur(function(){
+          $(".va").eq(3).attr("value","你的账户名和登录名");
+          $(".tips").eq(3).css("visibility","hidden");
+        });
+
+        $(".va").eq(4).focus(function(){
+          $(".va").eq(4).attr("value","");
+          $(".tips").eq(4).css("visibility","visible");
+        }).blur(function(){
+          $(".va").eq(4).attr("value","你的账户名和登录名");
+          $(".tips").eq(4).css("visibility","hidden");
+        });
+
+        $(".va").eq(5).focus(function(){
+          $(".va").eq(5).attr("value","");
+          // $(".tips").eq(5).css("visibility","visible");
+        }).blur(function(){
+          $(".va").eq(5).attr("value","你的账户名和登录名");
+          // $(".tips").eq(5).css("visibility","hidden");
+        });
+
+      });
+    </script>
+
+  </body>
+</html>

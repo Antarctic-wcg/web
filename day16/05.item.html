@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 2000px;
+      }
+
+      .box1 {
+        height: 300px;
+        border: 1px solid red;
+        margin: 50px auto;
+
+        /*伸缩盒子的父元素必须要设置flex*/
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .box1 > div {
+        width: 200px;
+        height: 200px;
+        background: pink;
+      }
+
+
+      .box1 > div:nth-child(3){
+
+        /*调整自身在侧轴的位置*/
+        align-self: flex-start;
+      }
+
+      .box1 > div:nth-child(5){
+        align-self: flex-end;
+      }
+
+
+      /*6666666666666666666666666666666666666666666*/
+
+
+
+      .box2 {
+        height: 800px;
+        border: 1px solid red;
+        margin: 50px auto;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        /*align-content 只能调整在侧轴有折行的盒子*/
+        /*align-content: center;*/
+        align-content: space-around;
+      }
+
+      .box2 > div {
+        width: 200px;
+        height: 200px;
+        background: pink;
+      }
+
+      .box2 > div:nth-child(5){
+        /*出场顺序，小的排列在前*/
+        order: -1;
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="box1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+    <div class="box2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </div>
+
+
+  </body>
+</html>

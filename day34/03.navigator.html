@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>navigator</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    console.log(navigator);
+    var str = navigator.userAgent;
+    var pattern = /Android|iPhone/gi;
+
+    //设备适配器的编写
+    if (pattern.test(str)){
+      console.log("mobile");
+    } else {
+      console.log("PC");
+    }
+
+    console.log("------------------------");
+    console.log(navigator.userLanguage);// 用户默认语言
+    console.log(navigator.platform);// 操作系统平台
+    console.log(navigator.vendor);//浏览器厂商
+    console.log(navigator.plugins);//输出插件
+
+
+    </script>
+
+
+  </body>
+</html>

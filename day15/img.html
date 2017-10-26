@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    *{
+      margin:0;
+      padding: 0;
+    }
+      .box{
+        width:950px;
+        height: 86px;
+        margin:50px auto;
+        overflow: hidden;
+
+      }
+
+      .txt{
+        width:950px;
+        height: 86px;
+        float: left;
+        margin-top: -90px;
+        margin-left: 780px;
+      }
+      .box img{
+
+        animation:img 8s linear infinite;
+
+      }
+      .box:hover img{
+        animation-play-state:paused;
+      }
+      @keyframes img{
+        0%{
+          transform: translateX(0);
+        }
+        50%{
+          transform: translateX(-400px);
+        }
+        100%{
+          transform: translateX(-800px);
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="./image/1.jpg" alt="">
+      <img src="./image/2.jpg" alt="">
+      <img src="./image/3.jpg" alt="">
+      <img src="./image/4.jpg" alt="">
+      <img src="./image/5.jpg" alt="">
+      <img src="./image/6.jpg" alt="">
+      <img src="./image/7.jpg" alt="">
+
+      <div class="txt">
+        <img src="./image/1.jpg" alt="">
+        <img src="./image/2.jpg" alt="">
+        <img src="./image/3.jpg" alt="">
+        <img src="./image/4.jpg" alt="">
+        <img src="./image/5.jpg" alt="">
+        <img src="./image/6.jpg" alt="">
+        <img src="./image/7.jpg" alt="">
+
+      </div>
+
+    </div>
+  </body>
+</html>

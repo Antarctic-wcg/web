@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>自定义bind函数</title>
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+    /*
+            自定义bind,实现和内置bind一样的功能
+            @func,要绑定函数
+            @context,指定this
+            @arg...,需要提前传入的参数
+            */
+    function bind(func, context) {
+
+      /*
+      直接在伪数组上调用真数组的方法即可！！！！！！
+      */
+      var prevArgs = Array.prototype.slice.call(arguments, 2);
+
+      return function() {
+        //arguments属于当前的函数
+        var nowArgs = Array.prototype.slice.call(arguments, 0);
+
+        var args = prevArgs.concat(nowArgs);
+
+        return func.apply(context, args);
+      };
+    }
+
+
+    console.log("-----------测试代码------------");
+    var value = 0;
+    var obj = {
+      value: 10
+    };
+
+    function test() {
+      console.log(this.value);
+      console.log(arguments);
+    }
+
+
+    var newFun = bind(test, obj, 10, 20, 30);
+    newFun(1, 2, 3);
+
+
+    /*
+    作业：
+    1. 掌握今天的代码！！！！！！
+    2. 预习柯里化
+    */
+  </script>
+</body>
+
+</html>

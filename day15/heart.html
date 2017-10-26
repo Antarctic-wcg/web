@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>心脏</title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      .box{
+        width:500px;
+        height:500px;
+        background: pink;
+        margin:50px auto;
+        position: relative;
+      }
+      .box-l,.box-r,.box-c{
+        width:200px;
+        height:200px;
+        position: absolute;
+        /*box-shadow: 0 0 3px 3px #fff;*/
+        border:1px solid #fff;
+        border-radius: 50%;
+        animation: heart 2s infinite;
+      }
+      .box-l{
+        top:53px;
+        left:61px;
+      }
+      .box-r{
+        top:53px;
+        right:61px;
+      }
+      .box-c{
+        border-radius: 0;
+        top:147px;
+        left:150px;
+        transform: rotateZ(45deg);
+      }
+
+      @keyframes heart {
+        0%{
+          box-shadow: 0 0 1px 3px #fff;
+        }
+        50%{
+          box-shadow: 0 0 5px 10px #fff;
+          transform: scale(1.1,1.1) rotate(45deg);
+        }
+        100%{
+          box-shadow: 0 0 1px 3px #fff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+      <div class="box">
+        <div class="box-l"></div>
+        <div class="box-r"></div>
+        <div class="box-c"></div>
+      </div>
+  </body>
+</html>

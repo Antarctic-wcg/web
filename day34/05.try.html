@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>try catch finally</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    try {
+      //把可能出现错误的代码填写在try中，但是有些错误是无法处理必须报错的，将来出现错误之后，可以继续运行，而不会崩溃！！！！
+      //一旦在某处抛出了错误，那么try中的其他代码将不再执行
+      // console.log(a);
+
+      console.log(10/0);//Infinity
+      console.log(2*Number.MAX_VAlUE);//NaN
+
+
+      // /* 自定义错误，并且手动抛出错误！！！！*/
+      var err = new Error("自定义错误", "05.try.html", "18");
+      throw err;//抛出错误
+
+
+
+    } catch(e){
+
+      //instanceof 用于测试对象是否属于某个构造函数!!!!
+      if (e instanceof ReferenceError){
+        console.log("引用错误");
+      } else if (e instanceof Error){
+        console.log("Error....");
+      }
+
+
+
+      //用于捕获出现的错误，参数就是错误对象
+      console.log("捕获错误",e);
+    } finally{
+
+      //无论是否有错误，那么finally都会执行
+      console.log("in finally .....");
+    }
+
+
+    console.log("success........");
+
+
+    /*
+    嵌套try可以，如果没有catch，那么错误会向外传递，直到遇到一个catch为止！！！！！！
+    */
+
+
+    </script>
+
+  </body>
+</html>

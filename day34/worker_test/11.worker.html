@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>worker线程</title>
+  </head>
+  <body>
+
+
+    <script>
+
+    //一旦线程创建成功，那么线程立刻开始运行！！！
+    var one = new Worker("./one.js");
+    var two = new Worker("./one.js");
+    var three = new Worker("./for.js");
+    var four = new Worker("./error.js");
+
+
+    four.onerror = function (event) {
+      console.log("four: ", event.message);
+      four.terminate();
+    };
+
+    //postMessage方法，用于给线程发送数据
+    one.postMessage(100);
+    two.postMessage(110);
+
+    //接收子线程发来的数据
+    one.onmessage = function (event) {
+      console.log("recv from one: ", event.data);
+
+      //结束一个线程
+      one.terminate();
+      two.terminate();
+      three.terminate();
+    }
+
+    two.onmessage = function (event) {
+      console.log("recv from two: ", event.data);
+    }
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <button id="btn">按钮</button>
+
+
+    <script type="text/javascript">
+
+     var value = 0;
+     var btn = document.getElementById("btn");
+     btn.value = 10;
+
+
+     function handler() {
+       console.log(this);
+       console.log(this.value);
+     }
+
+     //第一种情况
+    // btn.addEventListener("click", handler , false);//10
+
+    // 完全等价于第一种代码
+     /*btn.addEventListener("click", function(){
+       console.log(this);
+       console.log(this.value);
+     }, false);*/
+
+
+    //第二种情况
+     btn.addEventListener("click", function(){
+       console.log("btn this = ", this);
+
+       handler();//全局函数在任何地方都可以调用，如果没有指定this值，那么都是相对于window调用的。
+      // handler.call(this);
+
+     }, false);
+
+
+
+    </script>
+  </body>
+</html>

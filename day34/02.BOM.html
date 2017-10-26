@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BOM 浏览器对象模型</title>
+  </head>
+  <body>
+
+    <a href="#10000">点我</a>
+
+   <script type="text/javascript">
+
+   console.log(window.location);
+   console.log(window.navigator);
+   console.log(window.history);
+
+
+   //location
+   //hash 可读可写
+   location.hash = "#hehe";//可以用于多个页面之间传递数据
+
+
+   //host 可读可写
+  console.log(location.host);//获得主机名和端口号
+
+  //获得完整url,读写
+  console.log(location.href);
+
+  console.log(location.pathname);
+
+  console.log(location.search);//查询字符串 ？后边的
+
+
+  // location.assign("https://www.mi.com");//跳转页面
+
+  // location.reload(true);//重新加载
+
+  location.replace("https://www.baidu.com");
+
+
+   </script>
+  </body>
+</html>

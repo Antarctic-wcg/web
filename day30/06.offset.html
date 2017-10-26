@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .f {
+        width: 500px;
+        height: 100px;
+        padding: 10px;
+        border: 1px solid gray;
+
+        position: relative;
+        margin: 50px auto;
+      }
+      .s {
+        width: 100px;
+        height: 100px;
+        background: yellow;
+        position: absolute;
+        top: 50px;
+        left: 60px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="f" id="f">
+      <div class="s"></div>
+    </div>
+
+    <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    console.log($(".f").css("height"));//100px
+    console.log($(".f").height());//100,内容高度  content
+    console.log($(".f").innerHeight());//120, padding+content
+    console.log($(".f").outerHeight(false));//122, border + padding + content
+
+
+    console.log($(window).height());//浏览器窗口高度
+    console.log($(document).height());
+
+
+    console.log('----------------原生js offset....------------');
+    var f = document.getElementById("f");
+    var s = f.children[0];
+
+    //行内样式的设置和获得
+    f.style.backgroundColor = "red";
+    console.log(f.style.backgroundColor);
+
+    //只读属性，不能修改
+    console.log("f.offsetWidth = ",f.offsetWidth);//content + padding + border
+    console.log("f.offsetHeight = ",f.offsetHeight);
+
+    //只读属性，不能修改
+    console.log(s.offsetLeft);//获得left
+    console.log(s.offsetTop);//获得top
+
+    //相对于那个元素定位
+    console.log(s.offsetParent);
+
+
+    s.style.left = "300px";//通过style来修改
+    console.log(s.offsetLeft);
+
+
+    console.log("--------- client....------------------------");
+    console.log("f.clientWidth = ", f.clientWidth);//padding + content
+    console.log("f.clientHeight = ", f.clientHeight);
+
+    console.log("document.documentElement.clientHeight = ",document.documentElement.clientHeight);
+    console.log("document.documentElement.clientWidth= ",document.documentElement.clientWidth);
+
+
+
+    console.log("-----------------window.getComputedStyle--------");
+    var styles = window.getComputedStyle(f);
+    console.log(styles.height);//内容高度, content
+    console.log(styles.getPropertyValue("height"));
+
+
+    </script>
+
+  </body>
+</html>

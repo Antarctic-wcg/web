@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jquery event</title>
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .list li {
+        height: 50px;
+        border: 1px solid red;
+        margin: 10px auto;
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <button id="btn">按钮</button>
+
+    <ul class="list">
+      <li>0</li>
+      <li>1</li>
+      <li>2</li>
+    </ul>
+
+    <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    $("#btn").click([1,2,3], function(event){
+      console.log(event.data);
+    });
+
+    var lists = $(".list li");
+    console.log(lists);
+
+    //使用原生方法给3* li添加单击事件
+    for (var i = 0; i < lists.length; i++) {
+
+      /*
+      //闭包，导致的副作用，最后的i都一样
+      lists[i].onclick = function(){
+        console.log(i);//3
+      }
+      */
+
+      //第一种解决方法
+      // lists.eq(i).click(i,function(event){
+      //   console.log(event.data);
+      // });
+
+
+      //第二种解决方法
+      // (function(i){
+      //   lists[i].onclick = function(){
+      //     console.log(i);
+      //   }
+      // })(i);
+
+      //第三种解决方法
+      lists[i].index = i;
+      lists[i].onclick = function(){
+        console.log(this.index);
+      }
+
+    }
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>闭包</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    function fun(){
+      var start = 0;
+      return function(){
+        start++;
+        console.log("start = ", start);
+      }
+    }
+
+    /*
+    one,two 都是闭包。
+    但是每个闭包都拥有自己的变量，相互之间没有任何关联
+    */
+    var one = fun();
+    var two = fun();
+
+    one();//1
+    one();//2
+
+    two();//1
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

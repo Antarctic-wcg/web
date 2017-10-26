@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>原生控制语句</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+      var a = 10;
+
+      if (a > 10){
+        docment.write("a > 10");
+      }  else if (a == 10){
+        document.write("a == 10");
+      }  else {
+        document.write("a <= 10");
+      }
+
+
+      //循环
+      //条件可以不写，但是“分号”不能省略
+      // 此处的i是一个全局变量，不是局部变量
+      //i++,是自增 1
+      for (var i = 0; i < 10 ; i = i + 2){
+        console.log(i);
+      }
+      console.log(i);//10
+
+
+
+      for (var i = 0; i < 10; i++){
+        document.write("<hr width=" + (i + 1)* 50   +  "/>");
+      }
+
+
+      var j = 0;
+
+      while (j < 10){
+        console.log(j);
+        j = j + 1;
+      }
+
+      for (var i = 0, j = 0; i < 10 ; i++, j++) {
+        console.log("j = ", j);
+      }
+
+
+
+    </script>
+
+  </body>
+</html>

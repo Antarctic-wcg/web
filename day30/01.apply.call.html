@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>call,apply方法</title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    function fun() {
+      console.log(this);
+      console.log(this.value);
+      // console.log(value);
+    }
+
+    var obj = {
+      value: 10
+    };
+
+
+    var obj2 = {
+      value: 100
+    };
+
+
+    fun();
+
+    fun.call(obj,1,2,3,4,4);
+    fun.apply(obj2);
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

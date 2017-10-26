@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>继承</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+      //自动返回this
+    }
+
+    Person.prototype.say = function () {
+      console.log("hello....");
+    };
+
+
+
+    console.log("------------------------");
+
+    function Student(name,age,score){
+      Person.call(this,name,age);
+      this.score = score;
+    }
+
+
+    /*
+    Student.prototype = Person.prototype;
+    此种方式会导致 两个构造函数的原型一样(执行同一个内存地址)，会导致相互影响。
+    */
+
+
+    /*
+    功能：实现原型链继承，并且只继承原型方法，不会继承其他
+    @sup, 父类构造函数
+    @sub, 子类构造函数
+    */
+    function inherit(sup, sub){
+      function Fun(){};
+      Fun.prototype = sup.prototype;
+      sub.prototype = new Fun();
+      sub.prototype.constructor = sub;
+    }
+
+
+    inherit(Person,Student);
+    Student.prototype.exam = function () {
+      console.log("exam....");
+    };
+
+
+    var one = new Student('lisi', 10,59);
+    console.log(one);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

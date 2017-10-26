@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>classList</title>
+  </head>
+  <body>
+
+    <div id="divid" class="one two   three">新改扩建后公开四大金刚</div>
+
+    <script type="text/javascript">
+    var d = document.querySelector('#divid');
+    console.log(d.getAttribute("class"));
+    console.log(d.className);
+
+
+    //classList
+    console.log(d.classList[0]);
+    console.log(d.classList[1]);
+    console.log(d.classList[2]);
+
+
+    //add,remove,toggle
+    d.classList.add("four","five", "six");
+    d.classList.remove("four","five", "six");
+    d.classList.toggle("four");
+    d.classList.toggle("four");
+
+    console.log(d.classList.contains("one"));//true
+    console.log(d.classList.contains("nine"));//false
+
+
+
+
+    </script>
+
+  </body>
+</html>

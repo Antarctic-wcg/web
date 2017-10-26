@@ -1,0 +1,42 @@
+
+/*
+function
+*/
+
+@function bigSize($fontSize:16px){
+  @return $fontSize * 10;
+}
+
+/*
+
+1rem = html font-size
+*/
+$basicPx: 16px;
+@function pxTorem($fontSize:16px){
+  @return $fontSize / $basicPx * 1rem;
+}
+
+.one {
+  font-size: bigSize(10px);
+}
+
+.two {
+  font-size: pxTorem(32px);
+}
+
+
+@function genColor($color:red){
+  @if $color == red {
+    @return red;
+  } @else if $color == green{
+    @return green;
+  } @else {
+    @return blue;
+  }
+}
+
+
+
+.three {
+  color: genColor(green);
+}

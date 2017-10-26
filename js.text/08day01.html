@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>08html</title>
+  </head>
+  <body>
+    <div class="f">
+      <p class="p1">1</p>
+      <p>2</p>
+      <p>3</p>
+      <span>999</span>
+      <p>4</p>
+      <p>5</p>
+    </div>
+    <script type="text/javascript" src="./js/jquery-3.0.0.js"></script>
+    <script>
+      $(".f > .p1 + p ~ p").css({"color":"red","font-size":"16px"});
+
+    </script>
+  </body>
+</html>

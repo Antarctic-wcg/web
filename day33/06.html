@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>自定义属性</title>
+  </head>
+  <body>
+
+    <div id="divid" name="hello" data-a="1"  data-b="2" data-c="3"  data-value-abc-def="abc">dkgjkjgkg</div>
+
+    <div id="divid2"  data-one="1"></div>
+
+
+    <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script>
+    var d = document.querySelector('#divid');
+    // console.log(d.getAttribute('name'));
+    // console.log(d.getAttribute('data-a'));
+
+
+    console.log(d.dataset);
+    console.log(d.dataset.a);//访问
+    console.log(d.dataset.b);
+    console.log(d.dataset.c);
+    console.log(d.dataset.valueAbcDef);
+
+    //写
+    d.dataset.c = "30";
+
+    /*
+    规则：
+    1. 以data开头
+    2.  以 -  连接
+    3. 使用javascript操作时，使用驼峰法
+    */
+
+    //直接通过js来加
+    d.dataset.hello = "hehe";
+
+
+    console.log("------jQuery 中的data  ????---------------------");
+    var dd = $("#divid2");
+
+    dd.data({"name-abc":'lisi'});//jQuery直接添加，并没有在标签上显示
+    dd.data({'name-abc':"zhaosi",'age':10, 'hobby':[1,2,3]});
+    console.log(dd.data());
+
+
+    </script>
+
+  </body>
+</html>

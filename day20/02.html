@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <input type="text" id="year" value="">
+    <input type="text" id="month" value="">
+    <input type="text" id="day" value="">
+    <button id="btn">查询</button>
+    <p id="p"></p>
+
+    <script src="" charset="utf-8"></script>
+    <script type="text/javascript">
+    /*
+    三个input
+    input: year
+    input： month
+    input: day
+    2017  10  1
+    计算：2017-10-1是2017的多少天
+    */
+    var year = document.querySelector("#year");
+    var month = document.querySelector("#month");
+    var day = document.querySelector("#day");
+    var btn = document.querySelector("#btn");
+    // var p = document.querySelector("#p");
+    // var p = Element.innerHTML("#p");
+
+    btn.onclick = function(){
+      if(year.value % 4 === 0 && year.value % 100 !== 0){
+        console.log("普通闰年" + year.value);
+        fun1();
+      }else if (year.value % 3200 === 0 && year.value % 172800 === 0) {
+        console.log("很大的年,也是闰年"+ year.value);
+      }else if(year.value % 400 === 0 && year.value !== "86400"){
+
+          console.log("世纪年" + year.value);
+      }else{
+          console.log("平年");
+      }
+
+    }
+
+  function fun1(){
+    switch(month.value){
+      case "1":
+      // p.innerHTML("这是"+year.value+"年的第"+day.value+"天");
+      document.getElementById("p").textContent = document.getElementById("这是"+year.value+"年的第"+day.value+"天").innerHTML;
+    }
+  }
+
+
+    </script>
+  </body>
+</html>

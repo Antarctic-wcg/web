@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>string字符串</title>
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+    //字符串的定义方法
+    var str = 'hello';
+    var newStr = new String("hello");
+
+    console.log(str);
+    console.log(newStr.toString());
+
+    console.log(`helloworld`);
+
+
+
+    //字符串的各种方法!!!!!
+
+    var str1 = "hello world!◇";
+    console.log(str1.charAt(1));
+    console.log(str1[1]);
+    console.log(str1.charCodeAt(str1.length - 1));
+
+
+    var str2 = "hello world Google android google apple ios mac";
+    //查找子串,返回第一次出现的位置
+    console.log(str2.indexOf("google"));
+
+
+    //字符串拼接
+    var str3 = str1.concat(str2);
+    console.log(str3);
+
+
+    //切片
+    var str4 = "hellow roksjgkdkhljdlkhjlkdjldjljdlhjdklhjdlkhj".slice(0, 10);
+    console.log(str4);
+
+
+    //不会影响
+    var str5 = "hehe";
+    var str6 = str5;
+    str5 = "hello";
+    console.log(str5, str6);
+
+
+    //切片，类似于slice
+    var str7 = "hellow roksjgkdkhljdlkhjlkdjldjljdlhjdklhjdlkhj".substr(0, 10);
+    console.log(str7);
+
+
+
+    console.log("helligkdjhjdkhk".slice(10, 1)); //起始要小于结束
+
+    //将start,end调换位置
+    var str8 = "hskghdhkldhkdjhkdjhk".substring(10, 1);
+    console.log(str8);
+
+
+    //大小写转换
+    console.log("HELLOWORLD".toLowerCase());
+    console.log("helloworld".toUpperCase());
+
+    /*
+    封装函数：实现lowerCase, upperCase
+    */
+
+
+
+    //字符串分割
+    var arr = "hello,world,google,android".split(",", 2);
+    console.log(arr);
+
+   /*
+   封装函数：实现将 字符串 "hello world google"  转换为  "olleh dlrow elgoog"
+   封装函数：实现 判断一个字符串是否是回文？？？？
+   封装函数：实现 input中的最大字符个数？？
+   封装函数：简单实现 类似于Number功能的函数，可以将字符串转为数字
+   */
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

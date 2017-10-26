@@ -1,0 +1,22 @@
+/*************mixin*************************/
+/*
+$opacity: 0 ~ 100
+$opacity:50;
+*/
+.one {
+  margin: 0;
+  padding: 0;
+  color: red;
+  opacity: 0.6; }
+
+.two {
+  margin: 0;
+  padding: 0;
+  color: red;
+  opacity: 0.5; }
+
+/******************************************/
+.three {
+  box-shadow: 1px 1px 1px green, 3px 3px 3px red, 4px 4px 4px yellow; }
+
+/*# sourceMappingURL=03-mixin.css.map */

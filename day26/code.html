@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+      // var a = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','S','Y','Z',
+      //         'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','s','y','z'];
+
+      var d = '';
+      for (var i = 0; i < 6; i++) {
+
+          var a = Math.floor(Math.random() * 3 + 0);
+          // console.log(typeof(a));
+
+          if(a === 0){
+            var b = String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+            d += b;
+            // console.log(b);
+          }else if(a === 1){
+            var b = String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+            d += b;
+            // console.log(b);
+          }else{
+            var b = (Math.floor(Math.random() * 10 + 0));
+            d += b;
+            // console.log(b);
+          }
+
+      }
+      console.log(d);
+
+    </script>
+
+  </body>
+</html>

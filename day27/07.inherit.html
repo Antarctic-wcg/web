@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>继承: 原型链继承</title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+
+   function Person(name,age){
+     this.name = name;
+     this.age = age;
+   }
+
+   Person.prototype.sayHello = function () {
+     console.log("say hello ...");
+   };
+
+
+   function Student(name,age,score){
+     this.name = name;
+     this.age = age;
+     this.score = score;
+   }
+
+   //仍然继承了重复的name,age,而且将来Studen又会覆盖掉name,age吧
+   Student.prototype = new Person();//name,age,sayHello
+
+   //指定自己的constructor,因为上一步被覆盖了
+   Student.prototype.constructor = Student;
+
+
+  var one = new Student("zhansan", 22,88);
+  console.log(one);
+  // one.sayHello();
+  // console.log(one.constructor);//Student
+
+
+
+  /*
+  原型链继承的问题：继承了原型上的方法，但是同时也继承了Person对象中的属性(无用)
+  */
+
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

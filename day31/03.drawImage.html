@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>canvas 绘制图片</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+
+      #canvas {
+        border: 1px solid red;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <img src="./3.jpg" alt="">
+    <canvas id="canvas">不好意思，你的浏览器不支持canvas</canvas>
+
+    <script type="text/javascript">
+
+    //canvas绘制步骤！！！！！
+    var can = document.getElementById("canvas");
+
+    //图片DOM
+    var img = document.getElementsByTagName('img')[0];
+
+
+
+    //canvas对象有width,height属性
+    can.width = 600;
+    can.height= 600;
+
+    //1.获得画布上下文(比喻：找到画板上的纸)
+    var cxt = can.getContext("2d");
+
+    //给图片DOM对象注册 onload事件(图片加载成功之后会触发！！！！！)
+    img.onload = function () {
+      console.log("图片加载完毕");
+      cxt.drawImage(img,0,0);
+      cxt.drawImage(img,0,300,50,50);//指定尺寸
+      cxt.drawImage(img,250,110,120,120,300,300,250,250);//可以对图片进行切片
+    };
+
+
+    
+
+    </script>
+
+  </body>
+</html>

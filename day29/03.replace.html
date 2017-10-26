@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>replace!!!!</title>
+  </head>
+  <body>
+
+
+    <script type="text/javascript">
+
+    //
+    var result = "hello xxxxx".replace(/x/g, "X");
+    console.log(result);
+
+
+    result = "hello world hello world hello world".replace(/(hello) (world)/g, function(match,p1,p2,offset,str){
+      console.log("------------------------");
+      console.log("match = ", match);
+      console.log("p1= ", p1);
+      console.log("p2= ", p2);
+      console.log("offset = ", offset);
+      console.log("str = ", str);
+
+      return "hehe";//替换整个正则表达式能匹配的部分
+    });
+    console.log(result);
+
+
+    //将 border-left-color  变为 borderLeftColor ????
+    result = "border-left-color".replace(/-([a-z])/g, function(match,p1){
+      return p1.toUpperCase();
+    });
+    console.log(result);
+
+    //将  borderLeftColor 变为  border-left-color ????
+    result = "borderLeftColor".replace(/([A-Z])/g, function(match,p1){
+      return "-"+p1.toLowerCase();
+    });
+    console.log(result);
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

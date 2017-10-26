@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1,user-scalable=no"/>
+    <!--
+     移动设备窗口三种viewport: layout viewport  idea viewport  visual viewport
+   -->
+
+   <style>
+     * {
+       margin: 0;
+       padding: 0;
+     }
+
+
+     h1 {
+       color: red;
+     }
+
+     /*
+     根据尺寸调整样式
+     */
+     /*@media screen and (width:800px) {
+       .one {
+         color: green;
+       }
+     }*/
+
+     /*
+     max-width，小于800px的宽度时，对应的样式
+     */
+     @media all and (max-width: 800px){
+       .one {
+         color: green;
+         font-size: 50px;
+       }
+     }
+
+
+
+    h2 {
+      color: yellow;
+    }
+
+
+    /*
+    min-width: 是下限，大于 500px
+    */
+    @media all and (min-width:500px){
+      .two {
+        color: blue;
+        font-size: 50px;
+      }
+    }
+
+
+    /*
+    800px <= width <= 1200px
+    */
+    @media all and (min-width: 800px) and (max-width: 1200px) {
+      .three {
+        color: purple;
+        font-size: 50px;
+      }
+    }
+
+
+    .four::after {
+      content: "竖屏";
+    }
+
+
+    @media all and (orientation: portrait) {
+      .four::after {
+        content: "竖屏";
+      }
+    }
+
+    @media all and (orientation: landscape) {
+      .four::after {
+        content: "横屏";
+      }
+    }
+
+
+
+   </style>
+
+    <title>媒体查询</title>
+  </head>
+  <body>
+
+
+    <h1 class="one">我是大标题</h1>
+    <h2 class="two">我是大标题</h2>
+    <div class="three">div元素</div>
+
+    <h3 class="four">当前屏幕方向：</h3>
+
+
+
+
+
+  </body>
+</html>

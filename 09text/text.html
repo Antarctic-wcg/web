@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>js</title>
+    <style>
+      .red{
+        width:200px;
+        height:300px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="f">
+      <p>111</p>
+      <p>222</p>
+      <span>333</span>
+      <p>444</p>
+      <p>555</p>
+      <p>666</p>
+    </div> -->
+
+    <div class="red">
+      111111111111111111111111111
+    </div>
+
+
+    <script type="text/javascript" src="./jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+      // $(".f p:eq(0)").append("内部结尾追加");
+      // $(".f p:eq(1)").prepend("内部前面追加");
+      // console.log($(".f p").html());
+      // console.log($(".f p").text());
+      // $(".f p").after("<h2>我是h2</h2>")
+      // $("<p>ppp</p>").insertAfter(".f p");
+      // $(".f span:nth-child(3)").css("color","red");
+      // $(".f p:eq(2)").css("color","blue");
+      // console.log($("div").hasClass("f"));
+      // var a= $(".f p:eq(1)").detach();
+      // $(".f p:eq(1)").after(a);
+
+      $(document).ready(function(){
+        $(".red").toggle(function(){
+          $(this).css({"background":"yellow","width":"200px","height":"100px","display":"block"});
+        })
+      });
+    </script>
+  </body>
+</html>

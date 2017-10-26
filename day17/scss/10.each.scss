@@ -1,0 +1,31 @@
+
+/*
+@each
+*/
+
+$px: red green blue yellow pink purple;
+
+@each $var in $px {
+  .backcolor-#{$var} {
+    background: $var;
+  }
+}
+
+
+$fontColor: 10px red, 20px green, 30px blue;
+@each  $fontSize, $color in $fontColor {
+  .item-#{$color} {
+    font-size: $fontSize;
+    color: $color;
+  }
+}
+
+
+
+$em: (h1: 3em, h2: 2em, h3: 1em);
+
+@each $tag, $size in $em {
+  #{$tag}{
+    font-size: $size;
+  }
+}

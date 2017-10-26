@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <script type="text/javascript">
+
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+    }
+
+    Person.prototype.sayHello = function () {
+      console.log("hello...");
+    };
+
+    console.log(Person.prototype.constructor);//Person
+
+    var one = new Person('lisi', 22);
+    one.sayHello();
+    console.log(one.constructor === Person);//构造器，用于表示该对象是由那个构造器产生的！！！！！
+
+
+    </script>
+
+  </body>
+</html>

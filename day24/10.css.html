@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>原生方法操作css</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .color-red {
+        color:red;
+      }
+
+      .big-size {
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!--id,class 叫做特性  -->
+    <div id="box" >css的设置</div>
+
+    <script type="text/javascript">
+    var box = document.getElementById("box");
+
+    //可以设置
+    // box.setAttribute("style", "font-size:50px;color:red;");
+
+
+    //单个设置
+    // box.style.color = "red";
+    // box.style.fontSize = "50px";
+    // box.style.backgroundColor= "yellow";
+
+
+    //综合设置
+    box.style.cssText = "background:pink";
+    box.style.border = "1px solid red";
+
+
+
+
+    //使用 .去访问叫做属性
+    console.log(box.id);//box
+    console.log(box.className);
+    box.className = "color-red big-size";
+
+
+    </script>
+
+  </body>
+</html>

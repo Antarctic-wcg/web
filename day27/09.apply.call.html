@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>apply、call方法</title>
+</head>
+
+<body>
+
+
+  <script type="text/javascript">
+    var value = 0;
+
+    function fun() {
+      console.log(this);
+      console.log("this.value = ", this.value);
+      console.log("arguments = ", arguments);
+    }
+    fun(); //直接调用时，fun内部的this === window, 所以this.value === window.value === value
+
+
+    var obj = {
+      value: 10
+    };
+
+    var obj2 = {
+      value: 100
+    };
+
+    /*
+    指定fun函数内部的this 为obj,也就是函数内部的this已经变成了obj对象。
+    不在是window。
+    call的作用就是改变函数中的this.
+    其余的参数都是传递给fun函数
+    */
+    fun.call(obj,1,2,3,4);//10
+    fun.call(obj2,1,2,3,4,5);//100
+
+    fun.apply(obj2, [1,2,3,4,5]);//自动将数组拆分为单个参数！！！！！
+    fun.apply(null, [1,2,3,4,5]);
+
+
+    /*
+    apply,call方法的作用和区别？？？
+    */
+
+  </script>
+</body>
+
+</html>

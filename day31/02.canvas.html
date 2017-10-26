@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>canvas</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+
+      #canvas {
+        border: 1px solid red;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <canvas id="canvas">不好意思，你的浏览器不支持canvas</canvas>
+
+    <script type="text/javascript">
+
+    //canvas绘制步骤！！！！！
+
+    var can = document.getElementById("canvas");
+
+    //canvas对象有width,height属性
+    can.width = 600;
+    can.height= 600;
+
+    //1.获得画布上下文(比喻：找到画板上的纸)
+    var cxt = can.getContext("2d");
+
+
+    cxt.moveTo(100,0);
+    cxt.lineTo(100,600);
+    cxt.stroke();
+
+
+    cxt.font = "50px 宋体";
+    cxt.textAlign = "end";//不需要记忆
+    cxt.fillText("我是中国人abcdefghxf", 100,200);
+
+
+
+    //绘制图片？？？？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

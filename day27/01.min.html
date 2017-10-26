@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    /*
+        求最小值
+        @参数 array|value1,value2....
+        */
+    function minNumber() {
+      //如果没有传递参数，返回NaN
+      if (!arguments[0]) {
+        return NaN;
+      }
+
+      //参数是数组
+      if (Array.isArray(arguments[0])) {
+        return (arguments[0].sort(function(a, b) {
+          return a - b;
+        }))[0];
+      }
+
+
+      //参数是单个传递的
+      //arguments是个伪数组，可以按照位置访问，但是它没有数组的哪些方法
+      var array = [];
+      for (var i = 0; i < arguments.length; i++) {
+        array[i] = arguments[i];
+      }
+
+      return (array.sort(function(a, b) {
+        return a - b;
+      }))[0];
+    }
+
+    console.log(minNumber([2,3,10,9,1]));
+    console.log(minNumber(2, 3, 10, 9, 1));
+
+
+
+    /*
+    6位验证码
+    [0,1,2,3,4,5,6,7,8,9,a..z,A...Z];
+    */
+  </script>
+
+</body>
+
+</html>

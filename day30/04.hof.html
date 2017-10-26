@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>高阶函数</title>
+  </head>
+  <body>
+
+    <!--
+    高阶：加工厂
+    -->
+    <script type="text/javascript">
+
+     function even(num){
+       return  (num % 2 === 0) ? true :false;
+     }
+
+
+     //高阶函数：对已有的函数进行加工，返回一个具有特定功能的函数！！！！！
+
+     /*
+     高阶函数，对已有函数结果取反
+     @fn,要加工的函数
+     */
+     function not(fn){
+       return function(arg){
+         return !fn.call(null,arg);
+       };
+     }
+
+
+     var odd = not(even);
+
+     console.log(odd(10));
+     console.log(odd(3));
+
+
+
+    // 实现一个高阶函数，该函数返回一个可以计算(和的平方)的函数？？
+    
+
+
+
+
+    </script>
+
+  </body>
+</html>

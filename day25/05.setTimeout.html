@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>超时定时器 setTimeout</title>
+  </head>
+  <body>
+
+
+    <button id="start"> start</button>
+    <button id="stop"> stop</button>
+
+    <script type="text/javascript">
+
+    /*
+    setTimeout,在时间到达之后，只会执行一次，除非手动调用
+    */
+
+
+
+    var id1;
+
+    function start(){
+      console.log("定时器代码");
+
+      /*
+      该代码，可以保证，只有以上代码执行完毕之后，才会向队列中添加下一次。
+      */
+      id1 = setTimeout(start, 1000);
+    }
+
+    document.getElementById("start").onclick = function () {
+      start();
+    };
+
+    document.getElementById("stop").onclick = function () {
+      clearTimeout(id1);
+    };
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>lowerupperCase</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+      /*
+      功能:大写字母转换成小写字母
+      @srcLower是需要转换的字符串
+      */
+      function lowerCase(srcLower){
+        var upper=[65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90];
+        var lower=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','s','y','z'];
+        var str1 = "";
+
+        for (var i = 0; i < srcLower.length; i++) {
+
+          if(srcLower.charCodeAt(i) < 65 || srcLower.charCodeAt(i) > 90){
+            return false;
+          }
+          var b = upper.indexOf(srcLower.charCodeAt(i));
+          str1 += lower[b];
+
+        }
+        console.log(str1);
+
+      }
+      lowerCase("ERQW");
+
+
+      /*
+      功能:小写字母转换成大写字母
+      @srcUpper是需要转换的字符串
+      */
+      function upperCase(srcUpper){
+
+        var my = {
+          97:"A",98:"B",99:"C",100:"D",101:"E",102:"F",103:"G",104:"H",105:"I",106:"J",107:"K",108:"L",109:"M",110:"N",
+          111:"O",112:"P",113:"Q",114:"R",115:"S",116:"T",117:"U",118:"V",119:"W",120:"X",121:"Y",122:"Z",
+        }
+        var str2 = "";
+
+        for (var i = 0; i < srcUpper.length; i++) {
+
+          if(srcUpper.charCodeAt(i) < 97 || srcUpper.charCodeAt(i) > 122){
+            return false;
+          }
+
+          // console.log();
+          str2 += my[srcUpper.charCodeAt(i)];
+
+        }
+
+        console.log(str2);
+      }
+      upperCase("qwer");
+
+
+
+    </script>
+
+  </body>
+</html>

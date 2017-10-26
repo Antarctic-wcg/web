@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #f {
+        width: 400px;
+        height: 200px;
+        background: yellow;
+        margin: 0 auto;
+      }
+
+      #s {
+        width: 100px;
+        height: 100px;
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <div id="f">
+      <div id="s"></div>
+    </div>
+
+    <script type="text/javascript">
+    //DOM2级的事件处理方式
+
+    var f = document.getElementById('f');
+    var s = document.getElementById('s');
+
+    /*
+    事件冒泡：事件由内向外进行传递！！！！！
+    事件捕获：事件由外向内传递!!!!!
+    */
+
+    function shandler(){
+      console.log("s被点击。。。");
+    }
+
+    function shandler2(){
+      console.log("s被点击 2。。。");
+    }
+
+    //添加事件
+    s.addEventListener('click', shandler, false);
+    s.addEventListener('click', shandler2, false);
+
+    //移除事件
+    s.removeEventListener("click", shandler,false);
+
+
+    function fhandler(){
+      console.log("f被点击。。。");
+    }
+    f.addEventListener('click', fhandler, false);
+
+
+
+
+    </script>
+
+  </body>
+</html>

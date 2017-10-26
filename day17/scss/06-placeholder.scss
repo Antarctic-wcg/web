@@ -1,0 +1,26 @@
+
+/*
+%
+*/
+
+%bigSize {
+  font-size: 100px;
+  font-weight: bolder;
+}
+
+%smallSize {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.one {
+  color: red;
+  height: 100px;
+
+  @extend %bigSize ;
+}
+
+
+.two {
+  @extend %smallSize ;
+}

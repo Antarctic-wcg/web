@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .box{
+        position:relative;
+        width:790px;
+        height:340px;
+        overflow:hidden;
+        margin:0 auto;
+      }
+      .s1,.s2,.s3,.s4,.s5,.s6{
+        width:790px;
+        height:340px;
+        position:absolute;
+        transition: all 1s ease-in;
+      }
+      .s6{
+        left:0;
+        top:0;
+      }
+      .s1,.s2,.s3,.s4,.s5{
+        transform:translateX(790px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="s1">
+        <img src="./lunbo/1.jpg" alt="">
+      </div>
+      <div class="s2">
+        <img src="./lunbo/2.jpg" alt="">
+      </div>
+      <div class="s3">
+        <img src="./lunbo/3.jpg" alt="">
+      </div>
+      <div class="s4">
+        <img src="./lunbo/4.jpg" alt="">
+      </div>
+      <div class="s5">
+        <img src="./lunbo/5.jpg" alt="">
+      </div>
+      <div class="s6">
+        <img src="./lunbo/6.jpg" alt="">
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var box = document.querySelector(".box");
+      var sz = [];
+      // for (var i = 0; i < box.children.length; i++) {
+      //   var cla = "." + box.children[i].getAttribute("class");
+      //   var s = document.querySelector(cla);
+      //   sz.push(s);
+      //
+      // }
+
+      setTimeout(function hack(){
+        for (var i = 0; i < 6; i++) {
+          (function(i){
+            setTimeout(function handler(){
+
+              box.children[i].setAttribute("style","z-index:"+(1)+";transition: all 1s ease-in;transform:translateX(0);");
+
+              if(i === 5){
+                for (var j = 0; j < box.children.length; j++) {
+                  box.children[j].setAttribute("style","z-index:0;transform:translateX(790px);");
+                  if(box.children[j].getAttribute("class") === "s6"){
+                    box.children[5].setAttribute("style","transform:translateX(0px);");
+                  }
+                }
+                setTimeout(hack,1000);
+              }
+
+            },2000*(i+1));
+          })(i);
+        }
+      },1000);
+
+    </script>
+  </body>
+</html>
